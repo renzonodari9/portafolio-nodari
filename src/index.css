@@ -1,0 +1,161 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ROOT */
+:root {
+  --bg: #020617;
+  --bg-soft: #0f172a;
+  --text: #e5e7eb;
+  --text-soft: #9ca3af;
+  --accent: #22c55e;
+}
+
+/* BODY */
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* SCROLL SUAVE */
+html {
+  scroll-behavior: smooth;
+}
+
+/* SECCIONES */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* TITULOS */
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 600;
+}
+
+/* TEXTO */
+p {
+  color: var(--text-soft);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* LINKS */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* BOTONES BASE */
+button {
+  cursor: pointer;
+  border: none;
+}
+
+/* SCROLLBAR PRO */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* SELECCIÓN DE TEXTO */
+::selection {
+  background: var(--accent);
+  color: black;
+}
+
+/* IMÁGENES */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* UTILIDAD */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+/* CARD PROYECTOS */
+.project-card {
+  background: #0f172a;
+  border: 1px solid #1f2937;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+/* IMAGEN */
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* CONTENIDO */
+.project-content {
+  padding: 20px;
+  text-align: left;
+}
+
+/* BOTONES */
+.project-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-github {
+  background: #374151;
+}
+
+.btn-github:hover {
+  background: #4b5563;
+}
+
+.btn-demo {
+  background: #06b6d4;
+}
+
+.btn-demo:hover {
+  background: #22d3ee;
+}
