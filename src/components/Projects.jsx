@@ -13,7 +13,7 @@ export default function Projects() {
       desc: "API en Python que analiza texto. Deploy en Render.",
       tech: "Python • FastAPI • Render",
       github: "https://github.com/renzonodari9/text-analyzer-api.git",
-      demo: "https://text-analyzer-api-hquf.onrender.com/docs",
+      demo: "https://text-analyzer-api-hquf.onrender.com/app",
       img: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200"
     }
   ];
