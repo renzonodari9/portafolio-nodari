@@ -14,22 +14,31 @@ export default function Hero() {
           Hola, soy <span className="text-cyan-400">Renzo</span>
         </h1>
 
+        {/* 🔥 TITULO PRO */}
         <p className="mt-4 text-gray-400 text-lg">
-          Full Stack Developer 🚀
+          Desarrollador Full Stack 💻
         </p>
 
-        {/* 💼 TEXTO PRO */}
-        <p style={{ marginTop: "15px", fontSize: "16px", color: "#9ca3af", maxWidth: "500px", marginInline: "auto" }}>
-          Desarrollo aplicaciones web modernas, APIs escalables y soluciones completas
-          enfocadas en rendimiento y experiencia de usuario.
+        {/* 💼 TEXTO MEJORADO */}
+        <p style={{
+          marginTop: "20px",
+          fontSize: "16px",
+          color: "#9ca3af",
+          maxWidth: "550px",
+          marginInline: "auto",
+          lineHeight: "1.6"
+        }}>
+          Como desarrollador Full Stack, mi objetivo es construir soluciones digitales completas:
+          diseñando interfaces modernas e intuitivas que cautiven al usuario, y desarrollando
+          arquitecturas backend robustas y escalables que resuelvan problemas reales.
         </p>
 
         {/* 🔥 BOTONES */}
         <div style={{
-          marginTop: "25px",
+          marginTop: "30px",
           display: "flex",
           justifyContent: "center",
-          gap: "10px",
+          gap: "12px",
           flexWrap: "wrap"
         }}>
           
