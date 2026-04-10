@@ -1,6 +1,14 @@
 export default function Projects() {
   const projects = [
     {
+      name: "App del Clima - Mendoza",
+      desc: "Aplicación del clima en tiempo real con React, TypeScript, Node.js y Tailwind CSS.",
+      tech: "React • TypeScript • Node.js • Tailwind CSS",
+      github: "https://github.com/renzonodari9/weather-app.git",
+      demo: "https://weather-mdz.netlify.app",
+      img: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=1200"
+    },
+    {
       name: "Notes App Full Stack",
       desc: "Aplicación completa con CRUD usando React, Node.js y MongoDB.",
       tech: "React • Node.js • MongoDB",
