@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { ExternalLink, Github, Code2 } from "lucide-react";
+import { ExternalLink, Github, Code2, Play } from "lucide-react";
 
 export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [showVideo, setShowVideo] = useState(false);
 
   const projects = [
     {
@@ -12,7 +13,8 @@ export default function Projects() {
       github: "https://github.com/renzonodari9/weather-app.git",
       demo: "https://weather-mdz.netlify.app",
       img: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=1200",
-      featured: true
+      featured: true,
+      videoId: "xqgzAnreU1I"
     },
     {
       name: "Notes App Full Stack",
@@ -49,6 +51,9 @@ export default function Projects() {
     return colors[tech] || "bg-gray-500/20 text-gray-300 border-gray-500/30";
   };
 
+  const featuredProject = projects.find(p => p.featured);
+  const otherProjects = projects.filter(p => !p.featured);
+
   return (
     <section id="projects">
       <div className="section-header">
@@ -62,11 +67,71 @@ export default function Projects() {
         </p>
       </div>
 
-      <div className="projects-grid">
-        {projects.map((p, i) => (
+      {featuredProject && (
+        <div className="featured-project">
+          <div className="featured-header">
+            <h3>🚀 Proyecto Principal</h3>
+          </div>
+          
+          <div className="featured-content">
+            <div className="featured-video-container">
+              <img src={featuredProject.img} alt={featuredProject.name} className="featured-img" />
+              <div className="video-overlay" onClick={() => setShowVideo(true)}>
+                <div className="play-button">
+                  <Play size={32} fill="white" />
+                </div>
+                <span>Ver Video Explicativo</span>
+              </div>
+              {featuredProject.featured && <span className="featured-badge">Destacado</span>}
+            </div>
+
+            <div className="featured-info">
+              <h3>{featuredProject.name}</h3>
+              <p className="featured-desc">{featuredProject.desc}</p>
+              
+              <div className="tech-badges">
+                {featuredProject.tech.map((t, idx) => (
+                  <span key={idx} className={`tech-badge ${getTechColor(t)}`}>
+                    {t}
+                  </span>
+                ))}
+              </div>
+
+              <div className="featured-footer">
+                <a href={featuredProject.github} target="_blank" rel="noopener noreferrer" className="btn-github-pro">
+                  <Github size={18} />
+                  Ver Código
+                </a>
+                <a href={featuredProject.demo} target="_blank" rel="noopener noreferrer" className="btn-demo-pro">
+                  <ExternalLink size={18} />
+                  Ver Demo
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showVideo && (
+        <div className="video-modal" onClick={() => setShowVideo(false)}>
+          <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-modal" onClick={() => setShowVideo(false)}>✕</button>
+            <iframe
+              src={`https://www.youtube.com/embed/${featuredProject.videoId}?autoplay=1`}
+              title="Video explicativo del proyecto"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
+
+      <div className="projects-grid" style={{ marginTop: "60px" }}>
+        {otherProjects.map((p, i) => (
           <div
             key={i}
-            className={`project-card-pro ${p.featured ? "featured" : ""}`}
+            className="project-card-pro"
             onMouseEnter={() => setHoveredIndex(i)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
@@ -78,7 +143,6 @@ export default function Projects() {
                   Ver Demo
                 </a>
               </div>
-              {p.featured && <span className="featured-badge">Destacado</span>}
             </div>
 
             <div className="project-content">
