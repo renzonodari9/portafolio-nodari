@@ -12,7 +12,7 @@ export default function Projects() {
       tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "OpenWeatherMap"],
       github: "https://github.com/renzonodari9/weather-app.git",
       demo: "https://weather-mdz.netlify.app",
-      img: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=1200",
+      img: "portafolio-nodari/public/Clima Mendoza - App del Clima y 2 páginas más - Personal_ Microsoft​ Edge 13_4_2026 11_39_03.png",
       featured: true,
       videoId: "xqgzAnreU1I"
     },
