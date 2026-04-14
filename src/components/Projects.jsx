@@ -7,22 +7,24 @@ export default function Projects() {
 
   const projects = [
     {
+      name: "E-commerce Platform",
+      desc: "Plataforma de comercio electrónico completa con panel de administración y tienda online. Sistema de autenticación, gestión de productos, categorías, órdenes y usuarios.",
+      tech: ["React", "TypeScript", "Node.js", "Prisma", "SQLite", "Vite"],
+      github: "https://github.com/renzonodari9/ecommerce-api",
+      demo: "https://heartfelt-heliotrope-917e92.netlify.app",
+      admin: "https://tiny-gaufre-f81e8a.netlify.app/login",
+      backend: "https://ecommerce-api-qw3j.onrender.com",
+      img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
+      featured: true,
+      videoId: "xqgzAnreU1I"
+    },
+    {
       name: "App del Clima - Mendoza",
       desc: "Aplicación del clima en tiempo real con datos actualizados cada momento. Incluye pronóstico de 5 días, información detallada del viento, humedad y más.",
       tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "OpenWeatherMap"],
       github: "https://github.com/renzonodari9/weather-app.git",
       demo: "https://weather-mdz.netlify.app",
-      img: "portafolio-nodari/public/Clima Mendoza - App del Clima y 2 páginas más - Personal_ Microsoft​ Edge 13_4_2026 11_39_03.png",
-      featured: true,
-      videoId: "xqgzAnreU1I"
-    },
-    {
-      name: "Notes App Full Stack",
-      desc: "Aplicación completa de notas con sistema CRUD completo. Gestión de usuarios, autenticación y base de datos en la nube.",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
-      github: "https://github.com/renzonodari9/notas-backend.git",
-      demo: "https://frontend-et8n.onrender.com",
-      img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200"
+      img: "/img-app.png"
     },
     {
       name: "Text Analyzer API",
@@ -46,7 +48,10 @@ export default function Projects() {
       "FastAPI": "bg-green-500/20 text-green-400 border-green-500/30",
       "Render": "bg-purple-500/20 text-purple-400 border-purple-500/30",
       "Pandas": "bg-blue-500/20 text-blue-400 border-blue-500/30",
-      "OpenWeatherMap": "bg-orange-500/20 text-orange-400 border-orange-500/30"
+      "OpenWeatherMap": "bg-orange-500/20 text-orange-400 border-orange-500/30",
+      "Prisma": "bg-indigo-500/20 text-indigo-400 border-indigo-500/30",
+      "SQLite": "bg-blue-400/20 text-blue-300 border-blue-400/30",
+      "Vite": "bg-purple-500/20 text-purple-400 border-purple-500/30"
     };
     return colors[tech] || "bg-gray-500/20 text-gray-300 border-gray-500/30";
   };
@@ -104,8 +109,20 @@ export default function Projects() {
                 </a>
                 <a href={featuredProject.demo} target="_blank" rel="noopener noreferrer" className="btn-demo-pro">
                   <ExternalLink size={18} />
-                  Ver Demo
+                  Tienda
                 </a>
+                {featuredProject.admin && (
+                  <a href={featuredProject.admin} target="_blank" rel="noopener noreferrer" className="btn-demo-pro">
+                    <ExternalLink size={18} />
+                    Admin
+                  </a>
+                )}
+                {featuredProject.backend && (
+                  <a href={featuredProject.backend} target="_blank" rel="noopener noreferrer" className="btn-demo-pro">
+                    <ExternalLink size={18} />
+                    API
+                  </a>
+                )}
               </div>
             </div>
           </div>
