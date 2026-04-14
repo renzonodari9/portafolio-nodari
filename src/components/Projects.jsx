@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { ExternalLink, Github, Code2, Play } from "lucide-react";
+import { ExternalLink, Github, Code2 } from "lucide-react";
 
 export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [showVideo, setShowVideo] = useState(false);
 
   const projects = [
     {
@@ -13,10 +12,8 @@ export default function Projects() {
       github: "https://github.com/renzonodari9/ecommerce-api",
       demo: "https://heartfelt-heliotrope-917e92.netlify.app",
       admin: "https://tiny-gaufre-f81e8a.netlify.app/login",
-      backend: "https://ecommerce-api-qw3j.onrender.com",
       img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
-      featured: true,
-      videoId: "xqgzAnreU1I"
+      featured: true
     },
     {
       name: "App del Clima - Mendoza",
@@ -75,23 +72,16 @@ export default function Projects() {
       {featuredProject && (
         <div className="featured-project">
           <div className="featured-header">
-            <h3>🚀 Proyecto Principal</h3>
+            <h3>E-commerce Platform</h3>
+            <span className="featured-badge">Destacado</span>
           </div>
           
           <div className="featured-content">
-            <div className="featured-video-container">
+            <div className="featured-image-wrapper">
               <img src={featuredProject.img} alt={featuredProject.name} className="featured-img" />
-              <div className="video-overlay" onClick={() => setShowVideo(true)}>
-                <div className="play-button">
-                  <Play size={32} fill="white" />
-                </div>
-                <span>Ver Video Explicativo</span>
-              </div>
-              {featuredProject.featured && <span className="featured-badge">Destacado</span>}
             </div>
 
             <div className="featured-info">
-              <h3>{featuredProject.name}</h3>
               <p className="featured-desc">{featuredProject.desc}</p>
               
               <div className="tech-badges">
@@ -102,44 +92,21 @@ export default function Projects() {
                 ))}
               </div>
 
-              <div className="featured-footer">
+              <div className="featured-links">
                 <a href={featuredProject.github} target="_blank" rel="noopener noreferrer" className="btn-github-pro">
                   <Github size={18} />
-                  Ver Código
+                  GitHub
                 </a>
                 <a href={featuredProject.demo} target="_blank" rel="noopener noreferrer" className="btn-demo-pro">
                   <ExternalLink size={18} />
                   Tienda
                 </a>
-                {featuredProject.admin && (
-                  <a href={featuredProject.admin} target="_blank" rel="noopener noreferrer" className="btn-demo-pro">
-                    <ExternalLink size={18} />
-                    Admin
-                  </a>
-                )}
-                {featuredProject.backend && (
-                  <a href={featuredProject.backend} target="_blank" rel="noopener noreferrer" className="btn-demo-pro">
-                    <ExternalLink size={18} />
-                    API
-                  </a>
-                )}
+                <a href={featuredProject.admin} target="_blank" rel="noopener noreferrer" className="btn-demo-pro">
+                  <ExternalLink size={18} />
+                  Admin
+                </a>
               </div>
             </div>
-          </div>
-        </div>
-      )}
-
-      {showVideo && (
-        <div className="video-modal" onClick={() => setShowVideo(false)}>
-          <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-modal" onClick={() => setShowVideo(false)}>✕</button>
-            <iframe
-              src={`https://www.youtube.com/embed/${featuredProject.videoId}?autoplay=1`}
-              title="Video explicativo del proyecto"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
           </div>
         </div>
       )}
