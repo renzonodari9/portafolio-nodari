@@ -7,10 +7,11 @@ export default function Projects() {
   const projects = [
     {
       name: "E-commerce Platform",
-      desc: "Plataforma de comercio electrónico completa con panel de administración y tienda online. Sistema de autenticación, gestión de productos, categorías, órdenes y usuarios.",
-      tech: ["React", "TypeScript", "Node.js", "Prisma", "SQLite", "Vite"],
+      desc: "Plataforma de comercio electrónico completa con panel de administración y tienda online. Sistema de gestión de productos, categorías y carrito de compras.",
+      tech: ["React", "TypeScript", "Node.js", "Prisma", "PostgreSQL", "Vite"],
       github: "https://github.com/renzonodari9/ecommerce-api",
-      demo: "https://ecommerce-admin-yvnu.onrender.com",
+      demo: "https://ecommerce-store-v8hq.onrender.com",
+      admin: "https://ecommerce-admin-yvnu.onrender.com",
       img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
       featured: true
     },
@@ -47,7 +48,7 @@ export default function Projects() {
       "Pandas": "bg-blue-500/20 text-blue-400 border-blue-500/30",
       "OpenWeatherMap": "bg-orange-500/20 text-orange-400 border-orange-500/30",
       "Prisma": "bg-indigo-500/20 text-indigo-400 border-indigo-500/30",
-      "SQLite": "bg-blue-400/20 text-blue-300 border-blue-400/30",
+      "PostgreSQL": "bg-blue-500/20 text-blue-300 border-blue-500/30",
       "Vite": "bg-purple-500/20 text-purple-400 border-purple-500/30"
     };
     return colors[tech] || "bg-gray-500/20 text-gray-300 border-gray-500/30";
@@ -99,7 +100,11 @@ export default function Projects() {
                 </a>
                 <a href={featuredProject.demo} target="_blank" rel="noopener noreferrer" className="btn-demo-pro">
                   <ExternalLink size={18} />
-                  Demo
+                  Tienda
+                </a>
+                <a href={featuredProject.admin} target="_blank" rel="noopener noreferrer" className="btn-demo-pro">
+                  <ExternalLink size={18} />
+                  Admin
                 </a>
               </div>
             </div>
