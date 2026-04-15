@@ -12,7 +12,7 @@ export default function Projects() {
       github: "https://github.com/renzonodari9/ecommerce-api",
       demo: "https://ecommerce-store-v8hq.onrender.com",
       admin: "https://ecommerce-admin-yvnu.onrender.com",
-      img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
+      img: "/foto.png",
       featured: true
     },
     {
