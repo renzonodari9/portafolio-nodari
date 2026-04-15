@@ -10,7 +10,6 @@ export default function Projects() {
       desc: "Plataforma de comercio electrónico completa con panel de administración y tienda online. Sistema de autenticación, gestión de productos, categorías, órdenes y usuarios.",
       tech: ["React", "TypeScript", "Node.js", "Prisma", "SQLite", "Vite"],
       github: "https://github.com/renzonodari9/ecommerce-api",
-      demo: "https://heartfelt-heliotrope-917e92.netlify.app",
       demo: "https://ecommerce-admin-yvnu.onrender.com",
       img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
       featured: true
@@ -99,11 +98,7 @@ export default function Projects() {
                 </a>
                 <a href={featuredProject.demo} target="_blank" rel="noopener noreferrer" className="btn-demo-pro">
                   <ExternalLink size={18} />
-                  Tienda
-                </a>
-                <a href={featuredProject.admin} target="_blank" rel="noopener noreferrer" className="btn-demo-pro">
-                  <ExternalLink size={18} />
-                  Admin
+                  Demo
                 </a>
               </div>
             </div>
