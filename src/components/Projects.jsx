@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, Github, Code2 } from "lucide-react";
+import { ExternalLink, Github, Code2, Play } from "lucide-react";
 
 export default function Projects() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -20,6 +20,7 @@ export default function Projects() {
       tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "OpenWeatherMap"],
       github: "https://github.com/renzonodari9/weather-app.git",
       demo: "https://weather-mdz.netlify.app",
+      video: "https://youtu.be/xqgzAnreU1I",
       img: "/img-app.png"
     },
     {
@@ -145,6 +146,12 @@ export default function Projects() {
                   <ExternalLink size={18} />
                   Demo
                 </a>
+                {p.video && (
+                  <a href={p.video} target="_blank" rel="noopener noreferrer" className="btn-video-pro">
+                    <Play size={18} />
+                    Ver Video
+                  </a>
+                )}
               </div>
             </div>
           </div>
