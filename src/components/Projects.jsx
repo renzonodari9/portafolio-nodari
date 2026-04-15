@@ -11,7 +11,7 @@ export default function Projects() {
       tech: ["React", "TypeScript", "Node.js", "Prisma", "SQLite", "Vite"],
       github: "https://github.com/renzonodari9/ecommerce-api",
       demo: "https://heartfelt-heliotrope-917e92.netlify.app",
-      admin: "https://tiny-gaufre-f81e8a.netlify.app/products",
+      admin: "https://ecommerce-admin-yvnu.onrender.com",
       img: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
       featured: true
     },
