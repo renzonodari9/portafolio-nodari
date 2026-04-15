@@ -24,14 +24,6 @@ export default function Projects() {
       video: "https://youtu.be/xqgzAnreU1I",
       img: "/img-app.png"
     },
-    {
-      name: "Text Analyzer API",
-      desc: "API REST en Python para análisis de texto. Procesa y extrae métricas como sentiment analysis y word count.",
-      tech: ["Python", "FastAPI", "Render", "Pandas"],
-      github: "https://github.com/renzonodari9/text-analyzer-api.git",
-      demo: "https://text-analyzer-api-hquf.onrender.com/app",
-      img: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200"
-    }
   ];
 
   const getTechColor = (tech) => {
@@ -43,9 +35,6 @@ export default function Projects() {
       "Express": "bg-gray-500/20 text-gray-300 border-gray-500/30",
       "Tailwind CSS": "bg-cyan-500/20 text-cyan-400 border-cyan-500/30",
       "Python": "bg-yellow-500/20 text-yellow-400 border-yellow-500/30",
-      "FastAPI": "bg-green-500/20 text-green-400 border-green-500/30",
-      "Render": "bg-purple-500/20 text-purple-400 border-purple-500/30",
-      "Pandas": "bg-blue-500/20 text-blue-400 border-blue-500/30",
       "OpenWeatherMap": "bg-orange-500/20 text-orange-400 border-orange-500/30",
       "Prisma": "bg-indigo-500/20 text-indigo-400 border-indigo-500/30",
       "PostgreSQL": "bg-blue-500/20 text-blue-300 border-blue-500/30",
