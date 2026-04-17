@@ -20,7 +20,7 @@ export default function Projects() {
       desc: "Aplicación del clima en tiempo real con datos actualizados cada momento. Incluye pronóstico de 5 días, información detallada del viento, humedad y más.",
       tech: ["React", "TypeScript", "Node.js", "Tailwind CSS", "OpenWeatherMap"],
       github: "https://github.com/renzonodari9/weather-app.git",
-      demo: "https://weather-mdz.netlify.app",
+      demo: "https://weather-app-front-kdpl.onrender.com",
       video: "https://youtu.be/xqgzAnreU1I",
       img: "/img-app.png"
     },
