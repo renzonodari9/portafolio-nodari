@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Navbar() {
   const links = [
@@ -10,46 +10,73 @@ export default function Navbar() {
   ];
 
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const observerRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = links.map((link) => {
+      const id = link.href.replace("#", "");
+      return document.getElementById(id);
+    }).filter(Boolean);
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = sections.findIndex((s) => s.id === entry.target.id);
+            if (index !== -1) {
+              setActiveIndex(index);
+            }
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    sections.forEach((section) => {
+      if (section) observerRef.current.observe(section);
+    });
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
 
   return (
     <nav
       style={{
         position: "fixed",
-        top: "20px",
+        top: isScrolled ? "10px" : "20px",
         width: "100%",
         display: "flex",
         justifyContent: "center",
         zIndex: 1000,
+        transition: "top 0.3s ease",
       }}
     >
       <div
         style={{
           position: "relative",
           display: "flex",
-          gap: "5px",
-          padding: "8px",
-          borderRadius: "20px",
+          gap: "4px",
+          padding: "6px",
+          borderRadius: "16px",
           backdropFilter: "blur(12px)",
-          background: "rgba(255,255,255,0.05)",
-          border: "1px solid rgba(255,255,255,0.1)",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+          background: "rgba(2, 6, 23, 0.9)",
+          border: "1px solid rgba(255, 255, 255, 0.1)",
+          boxShadow: "0 10px 40px rgba(0, 0, 0, 0.5)",
         }}
       >
-        {/* 🔥 INDICADOR QUE SE MUEVE */}
-        <div
-          style={{
-            position: "absolute",
-            top: "5px",
-            left: `${activeIndex * 100}px`,
-            width: "100px",
-            height: "35px",
-            borderRadius: "12px",
-            background: "linear-gradient(90deg, #06b6d4, #22c55e)",
-            opacity: 0.2,
-            transition: "all 0.3s ease",
-          }}
-        />
-
         {links.map((link, i) => (
           <a
             key={i}
@@ -57,14 +84,16 @@ export default function Navbar() {
             onClick={() => setActiveIndex(i)}
             style={{
               position: "relative",
-              width: "100px",
+              width: "auto",
               textAlign: "center",
-              padding: "8px 0",
-              borderRadius: "12px",
-              fontSize: "14px",
-              color: activeIndex === i ? "white" : "#9ca3af",
+              padding: "8px 12px",
+              borderRadius: "10px",
+              fontSize: "13px",
+              color: activeIndex === i ? "#22c55e" : "#9ca3af",
               textDecoration: "none",
-              transition: "0.3s",
+              transition: "all 0.3s ease",
+              fontWeight: activeIndex === i ? "600" : "400",
+              background: activeIndex === i ? "rgba(34, 197, 94, 0.1)" : "transparent",
             }}
           >
             {link.name}

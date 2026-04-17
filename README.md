@@ -1,16 +1,44 @@
-# React + Vite
+# 🚀 Portafolio Renzo Nodari
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio profesional desarrollador full stack. Diseño moderno y animado con efecto de partículas.
 
-Currently, two official plugins are available:
+## 📌 Descripción
+Portfolio personal showcasing mis proyectos y habilidades como desarrollador web full stack. Implementa animaciones fluidas con Framer Motion y un diseño dark theme profesional.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Tecnologías
+- React 19
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+- tsparticles
+- Vite
 
-## React Compiler
+## ⚡ Features
+- Diseño dark theme moderno
+- Animaciones con Framer Motion
+- Fondo con partículas interactivas
+- Navegación sticky con indicador activo
+- Secciones: Sobre mí, Skills, Experiencia, Proyectos, Contacto
+- Diseño responsive
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🌐 Demo
+**https://renzonodari9.github.io/portafolio-nodari/**
 
-## Expanding the ESLint configuration
+## 📦 Instalación
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+# Clonar el repo
+git clone https://github.com/renzonodari9/portafolio-nodari.git
+cd portafolio-nodari
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
+npm run dev
+```
+
+## 👨‍💻 Autor
+**Renzo Nodari** - Desarrollador Full Stack
+- GitHub: @renzonodari9
+- LinkedIn: [Renzo Nodari](#)
