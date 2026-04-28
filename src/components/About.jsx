@@ -3,7 +3,7 @@ import { Target, Zap, Users, Code2 } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-4 bg-[#020617]">
+    <section id="about" className="py-32 px-6 bg-[#020617]">
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}
@@ -13,17 +13,17 @@ export default function About() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/20 rounded-full px-4 py-2 text-[#22c55e] text-sm font-medium mb-4">
+          <span className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/20 rounded-full px-5 py-2.5 text-[#22c55e] text-sm font-medium mb-6">
             <Code2 size={16} />
             Sobre mí
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Construyo soluciones, no solo código
           </h2>
         </motion.div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           
           {/* Text Content */}
           <motion.div
@@ -32,34 +32,34 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="space-y-6 text-[#9ca3af] leading-relaxed">
-              <p className="text-lg">
-                Soy desarrollador Frontend con <span className="text-white font-medium">2+ años de experiencia</span> construyendo aplicaciones web modernas. Mi enfoque está en crear interfaces que no solo se ven bien, sino que <span className="text-[#22c55e] font-medium">resuelven problemas reales</span>.
+            <div className="space-y-8 text-[#9ca3af] leading-relaxed">
+              <p className="text-xl">
+                Soy desarrollador Frontend con <span className="text-white font-semibold">2+ años de experiencia</span> construyendo aplicaciones web modernas. Mi enfoque está en crear interfaces que no solo se ven bien, sino que <span className="text-[#22c55e] font-semibold">resuelven problemas reales</span>.
               </p>
               
-              <p>
+              <p className="text-lg">
                 Durante este tiempo he trabajado en proyectos que van desde plataformas de e-commerce hasta aplicaciones SaaS. Cada proyecto me enseñó que el mejor código es el que el usuario no nota, pero siente.
               </p>
               
-              <p>
-                Mi stack principal incluye <span className="text-white">React</span> para interfaces dinámicas, <span className="text-white">Node.js</span> para APIs robustas, y <span className="text-white">MongoDB</span> para bases de datos escalables. Pero lo más importante: entiendo cómo estas piezas se unen para crear experiencias coherentes.
+              <p className="text-lg">
+                Mi stack principal incluye <span className="text-white font-semibold">React</span> para interfaces dinámicas, <span className="text-white font-semibold">Node.js</span> para APIs robustas, y <span className="text-white font-semibold">MongoDB</span> para bases de datos escalables. Pero lo más importante: entiendo cómo estas piezas se unen para crear experiencias coherentes.
               </p>
             </div>
 
             {/* Key Points */}
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-[#22c55e]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Target size={20} className="text-[#22c55e]" />
+            <div className="mt-10 grid grid-cols-2 gap-6">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-[#22c55e]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Target size={22} className="text-[#22c55e]" />
                 </div>
                 <div>
-                  <h4 className="text-white font-medium mb-1">Enfoque en resultados</h4>
-                  <p className="text-sm text-[#9ca3af]">Cada decisión técnica tiene un propósito de negocio.</p>
+                  <h4 className="text-white font-semibold mb-2 text-lg">Enfoque en resultados</h4>
+                  <p className="text-[#9ca3af]">Cada decisión técnica tiene un propósito de negocio.</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-[#22c55e]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Users size={20} className="text-[#22c55e]" />
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-[#22c55e]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Users size={22} className="text-[#22c55e]" />
                 </div>
                 <div>
                   <h4 className="text-white font-medium mb-1">Trabajo en equipo</h4>

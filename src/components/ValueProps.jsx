@@ -42,7 +42,7 @@ export default function ValueProps() {
   ];
 
   return (
-    <section id="value" className="py-24 px-4 bg-[#020617]">
+    <section id="value" className="py-32 px-6 bg-[#020617]">
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}

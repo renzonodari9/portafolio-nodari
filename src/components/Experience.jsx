@@ -42,7 +42,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-24 px-4 bg-[#0a0f1a]">
+    <section id="experience" className="py-32 px-6 bg-[#0a0f1a]">
       <div className="max-w-6xl mx-auto">
         
         {/* Section Header */}

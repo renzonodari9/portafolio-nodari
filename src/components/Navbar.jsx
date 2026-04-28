@@ -29,58 +29,58 @@ export default function Navbar() {
           isScrolled ? "bg-[#020617]/95 backdrop-blur-md border-b border-[#1f2937]" : "bg-transparent"
         }`}
       >
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="w-10 h-10 bg-[#22c55e] rounded-full flex items-center justify-center text-[#020617] font-bold text-lg">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex items-center justify-between h-20">
+            {/* Logo - Larger */}
+            <div className="w-12 h-12 bg-[#22c55e] rounded-full flex items-center justify-center text-[#020617] font-bold text-xl shadow-lg shadow-[#22c55e]/20">
               RN
             </div>
 
-            {/* Desktop Links */}
-            <div className="hidden md:flex items-center gap-1">
+            {/* Desktop Links - Larger */}
+            <div className="hidden md:flex items-center gap-2">
               {links.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-2 rounded-lg text-sm text-[#9ca3af] hover:text-white hover:bg-[#1f2937] transition-all"
+                  className="px-5 py-2.5 rounded-xl text-base text-[#9ca3af] hover:text-white hover:bg-[#1f2937] transition-all font-medium"
                 >
                   {link.name}
                 </a>
               ))}
               
-              {/* Social Icons */}
-              <div className="flex items-center gap-1 ml-4 pl-4 border-l border-[#1f2937]">
+              {/* Social Icons - Larger */}
+              <div className="flex items-center gap-2 ml-4 pl-4 border-l border-[#1f2937]">
                 <a
                   href="https://github.com/renzonodari9"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg text-[#9ca3af] hover:text-white hover:bg-[#1f2937] transition-all"
+                  className="p-3 rounded-xl text-[#9ca3af] hover:text-white hover:bg-[#1f2937] transition-all"
                 >
-                  <Github size={16} />
+                  <Github size={20} />
                 </a>
                 <a
                   href="https://linkedin.com/in/renzonodari"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-lg text-[#9ca3af] hover:text-white hover:bg-[#1f2937] transition-all"
+                  className="p-3 rounded-xl text-[#9ca3af] hover:text-white hover:bg-[#1f2937] transition-all"
                 >
-                  <Linkedin size={16} />
+                  <Linkedin size={20} />
                 </a>
                 <a
                   href="mailto:renzonodari9@gmail.com"
-                  className="p-2 rounded-lg text-[#9ca3af] hover:text-white hover:bg-[#1f2937] transition-all"
+                  className="p-3 rounded-xl text-[#9ca3af] hover:text-white hover:bg-[#1f2937] transition-all"
                 >
-                  <Mail size={16} />
+                  <Mail size={20} />
                 </a>
               </div>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - Larger */}
             <button
-              className="md:hidden p-2 text-white"
+              className="md:hidden p-3 text-white"
               onClick={() => setMobileOpen(!mobileOpen)}
             >
-              {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+              {mobileOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
@@ -88,36 +88,36 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 bg-[#020617] z-[999] pt-20 px-6">
+        <div className="fixed inset-0 bg-[#020617] z-[999] pt-24 px-6">
           <div className="flex flex-col gap-4">
             {links.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-xl py-3 border-b border-[#1f2937] text-[#9ca3af] hover:text-white"
+                className="text-2xl py-4 border-b border-[#1f2937] text-[#9ca3af] hover:text-white font-medium"
               >
                 {link.name}
               </a>
             ))}
             
-            <div className="flex gap-4 mt-6">
+            <div className="flex gap-4 mt-8">
               <a
                 href="https://github.com/renzonodari9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3 bg-[#0f172a] border border-[#1f2937] rounded-xl text-center text-white flex items-center justify-center gap-2"
+                className="flex-1 py-4 bg-[#0f172a] border border-[#1f2937] rounded-2xl text-center text-white text-lg font-semibold flex items-center justify-center gap-2"
               >
-                <Github size={20} />
+                <Github size={24} />
                 GitHub
               </a>
               <a
                 href="https://linkedin.com/in/renzonodari"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3 bg-[#0f172a] border border-[#1f2937] rounded-xl text-center text-white flex items-center justify-center gap-2"
+                className="flex-1 py-4 bg-[#0f172a] border border-[#1f2937] rounded-2xl text-center text-white text-lg font-semibold flex items-center justify-center gap-2"
               >
-                <Linkedin size={20} />
+                <Linkedin size={24} />
                 LinkedIn
               </a>
             </div>
