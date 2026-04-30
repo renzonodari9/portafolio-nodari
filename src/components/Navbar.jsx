@@ -7,6 +7,7 @@ export default function Navbar() {
     { name: "Skills", href: "#skills" },
     { name: "Experiencia", href: "#experience" },
     { name: "Proyectos", href: "#projects" },
+    { name: "Servicios", href: "#services" },
     { name: "Valor", href: "#value" },
     { name: "Contacto", href: "#contact" },
   ];

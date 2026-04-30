@@ -3,23 +3,31 @@ import { Target, Zap, Users, Code2 } from "lucide-react";
 
 export default function About() {
   return (
-    <section id="about" className="py-32 px-6 bg-[#020617]">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="py-32 px-6 bg-[#020617] relative">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/3 -right-32 w-96 h-96 bg-[#22c55e]/5 rounded-full blur-3xl" />
+      </div>
+      
+      <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
           <span className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/20 rounded-full px-5 py-2.5 text-[#22c55e] text-sm font-medium mb-6">
             <Code2 size={16} />
             Sobre mí
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Construyo soluciones, no solo código
+            Desarrollador Full Stack con enfoque en resultados
           </h2>
+          <p className="text-[#9ca3af] text-lg max-w-2xl mx-auto">
+            Combinando código limpio con visión de producto para crear soluciones que escalan
+          </p>
         </motion.div>
 
         {/* Main Content */}
@@ -34,56 +42,42 @@ export default function About() {
           >
             <div className="space-y-8 text-[#9ca3af] leading-relaxed">
               <p className="text-xl">
-                Soy desarrollador Frontend con <span className="text-white font-semibold">2+ años de experiencia</span> construyendo aplicaciones web modernas. Mi enfoque está en crear interfaces que no solo se ven bien, sino que <span className="text-[#22c55e] font-semibold">resuelven problemas reales</span>.
+                Soy un desarrollador Full Stack que entiende tanto el código como el producto. 
+                Mi enfoque no es solo escribir código funcional, sino crear 
+                <span className="text-[#22c55e] font-semibold"> soluciones que generen valor real</span> para usuarios y negocios.
               </p>
               
               <p className="text-lg">
-                Durante este tiempo he trabajado en proyectos que van desde plataformas de e-commerce hasta aplicaciones SaaS. Cada proyecto me enseñó que el mejor código es el que el usuario no nota, pero siente.
+                He construido desde plataformas SaaS hasta e-commerce completos, pasando por APIs robustas 
+                y dashboards con métricas en tiempo real. Cada línea de código la escribo pensando en 
+                <span className="text-white font-semibold"> escalabilidad, mantenibilidad y experiencia de usuario</span>.
               </p>
               
               <p className="text-lg">
-                Mi stack principal incluye <span className="text-white font-semibold">React</span> para interfaces dinámicas, <span className="text-white font-semibold">Node.js</span> para APIs robustas, y <span className="text-white font-semibold">MongoDB</span> para bases de datos escalables. Pero lo más importante: entiendo cómo estas piezas se unen para crear experiencias coherentes.
+                Mi stack principal es <span className="text-white font-semibold">React + Node.js + MongoDB</span>, 
+                pero me adapto rápido a nuevas tecnologías. Lo que no cambia es mi compromiso con la calidad: 
+                código limpio, testing cuando es necesario, y deploy profesional desde el día uno.
               </p>
             </div>
 
-            {/* Key Points */}
-            <div className="mt-10 grid grid-cols-2 gap-6">
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#22c55e]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Target size={22} className="text-[#22c55e]" />
+            {/* Key Points - 2x2 Grid */}
+            <div className="mt-12 grid grid-cols-2 gap-6">
+              {[
+                { icon: Target, title: "Enfoque en resultados", desc: "Cada decisión técnica tiene un propósito de negocio" },
+                { icon: Users, title: "Comunicación clara", desc: "Simplifico conceptos técnicos para stakeholders" },
+                { icon: Zap, title: "Performance first", desc: "Core Web Vitals y optimización desde el día 1" },
+                { icon: Code2, title: "Código escalable", desc: "Clean code que otros pueden mantener" }
+              ].map((item, i) => (
+                <div key={i} className="group flex items-start gap-4 p-5 bg-[#0f172a] rounded-2xl border border-[#1f2937] hover:border-[#22c55e]/30 transition-all duration-300">
+                  <div className="w-12 h-12 bg-[#22c55e]/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <item.icon size={22} className="text-[#22c55e]" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-semibold mb-1 text-lg">{item.title}</h4>
+                    <p className="text-[#9ca3af] text-sm">{item.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="text-white font-semibold mb-2 text-lg">Enfoque en resultados</h4>
-                  <p className="text-[#9ca3af]">Cada decisión técnica tiene un propósito de negocio.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-[#22c55e]/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Users size={22} className="text-[#22c55e]" />
-                </div>
-                <div>
-                  <h4 className="text-white font-medium mb-1">Trabajo en equipo</h4>
-                  <p className="text-sm text-[#9ca3af]">Comunicación clara y colaboración efectiva.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-[#22c55e]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Zap size={20} className="text-[#22c55e]" />
-                </div>
-                <div>
-                  <h4 className="text-white font-medium mb-1">Performance first</h4>
-                  <p className="text-sm text-[#9ca3af]">Optimización y velocidad como prioridad.</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-10 h-10 bg-[#22c55e]/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Code2 size={20} className="text-[#22c55e]" />
-                </div>
-                <div>
-                  <h4 className="text-white font-medium mb-1">Código limpio</h4>
-                  <p className="text-sm text-[#9ca3af]">Maintainable y escalable a largo plazo.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </motion.div>
 
@@ -93,46 +87,60 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] rounded-2xl p-8 border border-[#1f2937]"
+            className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] rounded-3xl p-8 border border-[#1f2937] shadow-xl"
           >
-            <h3 className="text-white font-semibold mb-6">Trayectoria profesional</h3>
+            <h3 className="text-white font-bold text-xl mb-8">Trayectoria</h3>
             
-            <div className="space-y-6">
-              <div className="relative pl-6 border-l-2 border-[#22c55e]/30">
-                <div className="absolute -left-[9px] top-0 w-3 h-3 bg-[#22c55e] rounded-full" />
-                <span className="text-xs text-[#22c55e] font-medium">2024 - Presente</span>
-                <h4 className="text-white font-medium mt-1">Freelance & Proyectos Propios</h4>
-                <p className="text-sm text-[#9ca3af] mt-1">
-                  Desarrollo de aplicaciones completas para clientes y proyectos personales. 
-                  Implementación de e-commerce, dashboards y APIs.
-                </p>
-              </div>
-              
-              <div className="relative pl-6 border-l-2 border-[#06b6d4]/30">
-                <div className="absolute -left-[9px] top-0 w-3 h-3 bg-[#06b6d4] rounded-full" />
-                <span className="text-xs text-[#06b6d4] font-medium">2022 - 2024</span>
-                <h4 className="text-white font-medium mt-1">Autodidacta & Formación</h4>
-                <p className="text-sm text-[#9ca3af] mt-1">
-                  Aprendizaje intensivo de React, Node.js y MongoDB. 
-                  Construcción de proyectos personales para práctica real.
-                </p>
-              </div>
+            {/* Timeline */}
+            <div className="space-y-8">
+              {[
+                { 
+                  year: "2024 - Actualidad", 
+                  title: "Full Stack Developer", 
+                  desc: "ScoutBall SaaS, E-commerce platforms, APIs y dashboards con React, Node.js y MongoDB",
+                  color: "#22c55e"
+                },
+                { 
+                  year: "2023 - 2024", 
+                  title: "Desarrollo de Proyectos", 
+                  desc: "Apps completas con autenticación, APIs REST, y despliegue en producción",
+                  color: "#06b6d4"
+                },
+                { 
+                  year: "2022 - 2023", 
+                  title: "Formación Intensiva", 
+                  desc: "React, Node.js, MongoDB. Construcción de portafolio con proyectos reales",
+                  color: "#a855f7"
+                }
+              ].map((item, i) => (
+                <div key={i} className="relative pl-8 border-l-2 border-[#1f2937] last:border-l-0">
+                  <div 
+                    className="absolute -left-[9px] top-1 w-4 h-4 rounded-full border-4 border-[#020617]"
+                    style={{ backgroundColor: item.color }}
+                  />
+                  <span className="text-xs font-medium" style={{ color: item.color }}>{item.year}</span>
+                  <h4 className="text-white font-semibold mt-1">{item.title}</h4>
+                  <p className="text-sm text-[#9ca3af] mt-1 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
             </div>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-[#1f2937]">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-[#22c55e]">5+</div>
-                <div className="text-xs text-[#9ca3af]">Proyectos</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-[#22c55e]">2+</div>
-                <div className="text-xs text-[#9ca3af]">Años exp.</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-[#22c55e]">100%</div>
-                <div className="text-xs text-[#9ca3af]">Compromiso</div>
-              </div>
+            {/* Divider */}
+            <div className="my-8 border-t border-[#1f2937]" />
+
+            {/* Stats Grid */}
+            <div className="grid grid-cols-3 gap-6">
+              {[
+                { num: "2+", label: "Años", sub: "experiencia" },
+                { num: "5+", label: "Proyectos", sub: "completados" },
+                { num: "100%", label: "Código", sub: "propio" }
+              ].map((stat, i) => (
+                <div key={i} className="text-center p-4 bg-[#0a0f1a] rounded-2xl border border-[#1f2937]">
+                  <div className="text-3xl font-bold text-[#22c55e]">{stat.num}</div>
+                  <div className="text-xs text-[#9ca3af] mt-1">{stat.label}</div>
+                  <div className="text-xs text-[#6b7280]">{stat.sub}</div>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>

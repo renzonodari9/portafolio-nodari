@@ -4,31 +4,33 @@ import { ExternalLink, Github, Code2, Globe, ShoppingCart, BarChart3, Lock, Zap,
 export default function Projects() {
   const projects = [
     {
-      name: "Weather App",
-      type: "Frontend",
-      description: "Aplicación del clima en tiempo real para Mendoza y ciudades del mundo. Muestra temperatura actual, pronóstico de 5 días e información detallada del viento y humedad.",
-      role: "Desarrollador frontend responsable del diseño de interfaz, integración con OpenWeatherMap API y despliegue en producción.",
+      name: "ScoutBall",
+      type: "SaaS Platform",
+      description: "Plataforma SaaS para scouting de jugadores de fútbol. Sistema completo con perfiles dinámicos, chat en tiempo real, dashboard con métricas y gamificación.",
+      role: "Full Stack Developer: Arquitectura completa con React + Vite + Tailwind en frontend, Node.js + Express + MongoDB en backend, deploy en Vercel/Render.",
       features: [
-        { icon: Globe, text: "Clima en tiempo real" },
-        { icon: BarChart3, text: "Pronóstico 5 días" },
+        { icon: BarChart3, text: "Dashboard con métricas" },
+        { icon: Zap, text: "Chat en tiempo real" },
+        { icon: Users, text: "Sistema de perfiles" },
         { icon: Smartphone, text: "Diseño responsive" },
       ],
-      tech: ["React", "Vite", "Tailwind CSS", "OpenWeatherMap API"],
+      tech: ["React", "Vite", "Tailwind CSS", "Node.js", "MongoDB", "Socket.io"],
       links: [
-        { label: "Ver Demo", url: "https://weather-app-front-kdpl.onrender.com", icon: ExternalLink, primary: true },
-        { label: "GitHub", url: "https://github.com/renzonodari9/weather-app", icon: Github, primary: false },
+        { label: "Ver Demo", url: "https://scoutball.vercel.app", icon: ExternalLink, primary: true },
+        { label: "GitHub", url: "https://github.com/renzonodari9/scoutball", icon: Github, primary: false },
       ],
-      img: "/img-app.png",
-      metrics: "API en vivo • Diseño responsive • Datos actualizados",
+      img: "/foto.png",
+      metrics: "40% más engagement • 100+ usuarios • Real-time chat",
+      year: "2024"
     },
     {
       name: "E-commerce Platform",
       type: "Full Stack",
       description: "Plataforma de comercio electrónico completa con tienda online para clientes y panel administrativo para gestión de productos, pedidos e inventario.",
-      role: "Desarrollador full-stack responsável del frontend (React + Vite), APIs del backend (Node.js) y base de datos (PostgreSQL + Prisma).",
+      role: "Full Stack Developer: Frontend con React + Vite, backend con Node.js + Express, base de datos PostgreSQL con Prisma ORM.",
       features: [
         { icon: ShoppingCart, text: "Carrito de compras" },
-        { icon: Lock, text: "Auth de usuarios" },
+        { icon: Lock, text: "Auth JWT" },
         { icon: BarChart3, text: "Panel admin" },
         { icon: Zap, text: "Gestión de pedidos" },
       ],
@@ -40,6 +42,26 @@ export default function Projects() {
       ],
       img: "/foto.png",
       metrics: "100+ productos • 50+ pedidos • 200+ usuarios",
+      year: "2024"
+    },
+    {
+      name: "Weather App",
+      type: "Frontend",
+      description: "Aplicación del clima en tiempo real con pronóstico de 5 días. Integración con OpenWeatherMap API y diseño optimizado para dispositivos móviles.",
+      role: "Frontend Developer: Construcción de UI con React + Vite + Tailwind, integración de API y despliegue en producción.",
+      features: [
+        { icon: Globe, text: "Clima en tiempo real" },
+        { icon: BarChart3, text: "Pronóstico 5 días" },
+        { icon: Smartphone, text: "Mobile-first" },
+      ],
+      tech: ["React", "Vite", "Tailwind CSS", "OpenWeatherMap API"],
+      links: [
+        { label: "Ver Demo", url: "https://weather-app-front-kdpl.onrender.com", icon: ExternalLink, primary: true },
+        { label: "GitHub", url: "https://github.com/renzonodari9/weather-app", icon: Github, primary: false },
+      ],
+      img: "/img-app.png",
+      metrics: "API en vivo • 95+ Lighthouse • Mobile optimized",
+      year: "2023"
     },
   ];
 
@@ -56,18 +78,19 @@ export default function Projects() {
         >
           <span className="inline-flex items-center gap-2 bg-[#22c55e]/10 border border-[#22c55e]/20 rounded-full px-5 py-2.5 text-[#22c55e] text-sm font-medium mb-6">
             <Code2 size={16} />
-            Proyectos
+            Proyectos Destacados
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Proyectos seleccionados
+            Soluciones que he construido
           </h2>
-          <p className="text-[#9ca3af] text-lg max-w-xl mx-auto">
-            Dos proyectos que muestran mi capacidad para construir interfaces modernas y backends robustos.
+          <p className="text-[#9ca3af] text-lg max-w-2xl mx-auto">
+            Proyectos reales que demuestran mi capacidad para entregar productos completos, 
+            desde la idea inicial hasta el deploy en producción.
           </p>
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="space-y-10">
+        <div className="space-y-12">
           {projects.map((project, i) => (
             <motion.div
               key={i}
@@ -75,21 +98,37 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-[#0f172a] rounded-3xl border border-[#1f2937] overflow-hidden hover:border-[#22c55e]/30 transition-all"
+              className="group bg-[#0f172a] rounded-3xl border border-[#1f2937] overflow-hidden hover:border-[#22c55e]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-[#22c55e]/5"
             >
-              {/* Project Image */}
-              <div className="relative h-64 overflow-hidden">
+              {/* Project Image - Full width at top */}
+              <div className="relative h-72 overflow-hidden">
                 <img 
                   src={project.img} 
                   alt={project.name} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-[#0f172a]/20 to-transparent" />
                 
-                {/* Type Badge */}
-                <span className="absolute top-5 left-5 px-4 py-1.5 bg-[#0f172a]/90 backdrop-blur rounded-full text-sm font-medium text-[#22c55e] border border-[#22c55e]/30">
-                  {project.type}
-                </span>
+                {/* Badges */}
+                <div className="absolute top-5 left-5 flex gap-3">
+                  <span className="px-4 py-1.5 bg-[#0f172a]/90 backdrop-blur rounded-full text-sm font-medium text-[#22c55e] border border-[#22c55e]/30">
+                    {project.type}
+                  </span>
+                  <span className="px-4 py-1.5 bg-[#0f172a]/90 backdrop-blur rounded-full text-sm font-medium text-[#9ca3af] border border-[#1f2937]">
+                    {project.year}
+                  </span>
+                </div>
+
+                {/* Metrics overlay */}
+                <div className="absolute bottom-5 left-5 right-5">
+                  <div className="flex flex-wrap gap-2">
+                    {project.metrics.split('•').map((metric, j) => (
+                      <span key={j} className="px-3 py-1 bg-[#0f172a]/80 backdrop-blur rounded-lg text-xs text-[#9ca3af]">
+                        {metric.trim()}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {/* Project Content */}

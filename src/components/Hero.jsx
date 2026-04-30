@@ -39,7 +39,7 @@ export default function Hero() {
           <span className="text-white">Desarrollador</span>
           <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22c55e] to-[#06b6d4]">
-            Frontend
+            Full Stack
           </span>
         </motion.h1>
 
@@ -50,8 +50,9 @@ export default function Hero() {
           transition={{ delay: 0.4 }}
           className="text-xl md:text-2xl text-[#9ca3af] mb-8 max-w-2xl mx-auto leading-relaxed"
         >
-          Transformo diseños en experiencias web que conectan usuarios con productos.
-          <span className="text-white font-medium"> 2+ años construyendo interfaces modernas.</span>
+          Construyo aplicaciones web completas con
+          <span className="text-white font-medium"> React, Node.js y MongoDB</span>.
+          Enfocado en soluciones que escalan y generan resultados.
         </motion.p>
 
         {/* Quick Info */}
@@ -90,6 +91,13 @@ export default function Hero() {
             className="px-10 py-5 bg-[#0f172a] text-white border-2 border-[#1f2937] rounded-2xl font-semibold text-lg hover:bg-[#1f2937] hover:border-[#22c55e]/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3"
           >
             Contactarme
+          </a>
+          <a
+            href="/CV-Renzo-Nodari.pdf"
+            download
+            className="px-10 py-5 bg-transparent text-[#22c55e] border-2 border-[#22c55e]/30 rounded-2xl font-semibold text-lg hover:bg-[#22c55e]/10 hover:border-[#22c55e]/50 hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3"
+          >
+            Descargar CV
           </a>
         </motion.div>
 

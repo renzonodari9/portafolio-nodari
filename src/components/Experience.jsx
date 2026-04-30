@@ -5,38 +5,41 @@ export default function Experience() {
   const experiences = [
     {
       icon: Rocket,
-      title: "Desarrollo de Producto",
+      title: "Full Stack Developer - Proyectos Propios",
       period: "2024 - Presente",
+      company: "Freelance / Proyectos Propios",
       highlights: [
-        "Desarrollé ScoutBall: plataforma SaaS completa para scouting de jugadores de fútbol, con sistema de autenticación, perfiles dinámicos y chat en tiempo real.",
-        "Implementé dashboard con métricas y gamificación que mejoró el engagement de usuarios en un 40%.",
-        "Diseñé arquitectura frontend escalable con React + Vite + Tailwind para mejor rendimiento.",
+        "Desarrollé ScoutBall SaaS: Plataforma completa con React, Node.js y MongoDB. Incluye chat en tiempo real, dashboard con métricas y sistema de gamificación.",
+        "Implementé arquitectura escalable que soporta +100 usuarios concurrentes con tiempos de respuesta <200ms.",
+        "Deploy continuo con Vercel (frontend) y Render (backend), asegurando 99.9% uptime.",
       ],
-      tech: ["React", "Node.js", "MongoDB", "Vercel", "Render"],
+      tech: ["React", "Node.js", "MongoDB", "Socket.io", "Vercel", "Render"],
       color: "#22c55e",
     },
     {
       icon: Database,
-      title: "E-commerce & Backend",
+      title: "E-commerce Full Stack Development",
       period: "2024",
+      company: "Proyecto Personal / Freelance",
       highlights: [
-        "Construí plataforma de comercio electrónico con panel administrativo completo para gestión de productos y pedidos.",
-        "Implementé APIs RESTful con autenticación JWT y gestión de sesiones segura.",
-        "Diseñé base de datos PostgreSQL optimizada para manejar catálogos de +100 productos.",
+        "Plataforma e-commerce completa: Tienda online + Panel admin con React + Vite y Node.js + Express.",
+        "Base de datos PostgreSQL con Prisma ORM, optimizada para catálogos de 100+ productos y gestión de pedidos.",
+        "Autenticación JWT, carrito persistente y pasarela de pagos integrada.",
       ],
-      tech: ["Node.js", "Express", "Prisma", "PostgreSQL", "JWT"],
+      tech: ["React", "Node.js", "Express", "Prisma", "PostgreSQL", "JWT"],
       color: "#06b6d4",
     },
     {
       icon: Smartphone,
-      title: "Apps & Frontend",
+      title: "Frontend Developer - Apps & APIs",
       period: "2023 - 2024",
+      company: "Proyectos de Aprendizaje Intensivo",
       highlights: [
-        "Desarrollé Weather App con integración de APIs externas y diseño responsive multi-dispositivo.",
-        "Creé componentes reutilizables y patrones de diseño que redujeron tiempo de desarrollo en 30%.",
-        "Implementé sistema de caché para optimizar rendimiento y reducir llamadas a la API.",
+        "Weather App con React + Vite: Integración de APIs externas con caché local para optimizar performance.",
+        "Creé biblioteca de componentes reutilizables que redujo tiempo de desarrollo en un 30%.",
+        "Dominio de Tailwind CSS para diseños responsive que se adaptan perfecto a mobile.",
       ],
-      tech: ["React", "Vite", "Tailwind CSS", "APIs REST"],
+      tech: ["React", "Vite", "Tailwind CSS", "REST APIs", "LocalStorage"],
       color: "#a855f7",
     },
   ];
@@ -92,21 +95,27 @@ export default function Experience() {
                 {/* Content */}
                 <div className={`flex-1 ml-12 md:ml-0 ${i % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
                   <div className="bg-[#0f172a] rounded-2xl p-6 border border-[#1f2937] hover:border-[#22c55e]/20 transition-all">
-                    {/* Header */}
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex items-center gap-3">
-                        <div 
-                          className="w-12 h-12 rounded-xl flex items-center justify-center"
-                          style={{ background: `${exp.color}15` }}
-                        >
-                          <exp.icon size={24} style={{ color: exp.color }} />
-                        </div>
-                        <div>
-                          <h3 className="text-white font-semibold">{exp.title}</h3>
-                          <span className="text-sm text-[#9ca3af]">{exp.period}</span>
-                        </div>
-                      </div>
-                    </div>
+                 {/* Header */}
+                 <div className="flex items-start gap-4 mb-6">
+                   <div 
+                     className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+                     style={{ background: `${exp.color}15` }}
+                   >
+                     <exp.icon size={28} style={{ color: exp.color }} />
+                   </div>
+                   <div className="flex-1">
+                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-1">
+                       <h3 className="text-white font-bold text-xl">{exp.title}</h3>
+                       <span 
+                         className="px-3 py-1 rounded-full text-xs font-medium w-fit"
+                         style={{ background: `${exp.color}15`, color: exp.color }}
+                       >
+                         {exp.period}
+                       </span>
+                     </div>
+                     <p className="text-sm text-[#9ca3af]">{exp.company}</p>
+                   </div>
+                 </div>
 
                     {/* Highlights */}
                     <ul className="space-y-3 mb-4">

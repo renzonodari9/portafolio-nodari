@@ -8,11 +8,11 @@ export default function Skills() {
       icon: Code,
       color: "#22c55e",
       skills: [
-        { name: "React", desc: "Component architecture, hooks, state management" },
-        { name: "JavaScript", desc: "ES6+, async/await, DOM manipulation" },
-        { name: "HTML/CSS", desc: "Semantic HTML, CSS3, Flexbox, Grid" },
-        { name: "Tailwind CSS", desc: "Utility-first styling, responsive design" },
-        { name: "Vite", desc: "Build tooling, dev server, hot reload" },
+        { name: "React", level: 90, desc: "Hooks, Context, Component architecture" },
+        { name: "JavaScript", level: 85, desc: "ES6+, Async/Await, DOM manipulation" },
+        { name: "Tailwind CSS", level: 88, desc: "Utility-first, responsive design systems" },
+        { name: "HTML5/CSS3", level: 92, desc: "Semantic, Flexbox, Grid, animations" },
+        { name: "Vite", level: 85, desc: "Build tooling, HMR, optimization" },
       ]
     },
     {
@@ -20,21 +20,21 @@ export default function Skills() {
       icon: Server,
       color: "#06b6d4",
       skills: [
-        { name: "Node.js", desc: "Server-side JavaScript, event-driven" },
-        { name: "Express", desc: "REST APIs, middleware, routing" },
-        { name: "MongoDB", desc: "NoSQL databases, Mongoose ODM" },
-        { name: "Python", desc: "FastAPI, scripting, automation" },
+        { name: "Node.js", level: 82, desc: "Express, REST APIs, middleware" },
+        { name: "MongoDB", level: 80, desc: "Mongoose, aggregation, indexing" },
+        { name: "PostgreSQL", level: 75, desc: "Prisma ORM, queries, relations" },
+        { name: "Python", level: 70, desc: "FastAPI, scripting, automation" },
       ]
     },
     {
-      title: "Herramientas",
+      title: "Tools & DevOps",
       icon: Wrench,
       color: "#a855f7",
       skills: [
-        { name: "Git/GitHub", desc: "Version control, branching, PRs" },
-        { name: "Render", desc: "Backend deployment, databases" },
-        { name: "Vercel", desc: "Frontend deployment, CDN" },
-        { name: "Postman", desc: "API testing, documentation" },
+        { name: "Git/GitHub", level: 88, desc: "Version control, CI/CD, collaboration" },
+        { name: "Vercel", level: 85, desc: "Frontend deployment, Edge functions" },
+        { name: "Render", level: 82, desc: "Backend hosting, databases, cron jobs" },
+        { name: "Postman", level: 80, desc: "API testing, documentation, automation" },
       ]
     }
   ];
@@ -99,8 +99,18 @@ export default function Skills() {
                       <span className="text-white font-medium group-hover:text-[#22c55e] transition-colors">
                         {skill.name}
                       </span>
+                      <span className="text-xs text-[#9ca3af]">{skill.level}%</span>
                     </div>
-                    <p className="text-xs text-[#9ca3af]">{skill.desc}</p>
+                    <div className="w-full h-1.5 bg-[#1f2937] rounded-full overflow-hidden">
+                      <div 
+                        className="h-full rounded-full transition-all duration-1000 ease-out"
+                        style={{ 
+                          width: `${skill.level}%`,
+                          backgroundColor: category.color 
+                        }}
+                      />
+                    </div>
+                    <p className="text-xs text-[#9ca3af] mt-2">{skill.desc}</p>
                   </div>
                 ))}
               </div>

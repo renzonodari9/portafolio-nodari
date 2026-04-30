@@ -4,6 +4,7 @@ import About from "./components/About";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Projects from "./components/Projects";
+import Services from "./components/Services";
 import ValueProps from "./components/ValueProps";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -12,7 +13,7 @@ import ParticlesBg from "./components/ParticlesBg";
 function App() {
   return (
     <div className="bg-[#020617] text-white overflow-x-hidden">
-      
+       
       {/* Background */}
       <ParticlesBg />
 
@@ -24,6 +25,7 @@ function App() {
       <Skills />
       <Experience />
       <Projects />
+      <Services />
       <ValueProps />
       <Contact />
 
