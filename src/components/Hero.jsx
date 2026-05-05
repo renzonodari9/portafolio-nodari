@@ -388,7 +388,7 @@ export default function Hero() {
             }}
             >
               <img
-                src="/foto.png"
+                src="/mifoto.png"
                 alt="Renzo Nodari"
                 style={{
                   width: '100%',
