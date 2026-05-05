@@ -15,21 +15,61 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="fixed top-0 left-0 right-0 z-50 bg-[rgba(15,15,15,0.8)] backdrop-blur-[20px] border-b border-[rgba(63,63,70,0.3)] py-4"
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        background: 'rgba(15, 15, 15, 0.8)',
+        backdropFilter: 'blur(20px)',
+        borderBottom: '1px solid rgba(63, 63, 70, 0.3)',
+        padding: '16px 0'
+      }}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div style={{
+        maxWidth: '1280px',
+        margin: '0 auto',
+        padding: '0 24px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}>
         {/* Logo RN */}
-        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center shadow-[0_0_20px_rgba(34,197,94,0.3)]">
-          <span className="text-white font-bold text-base">RN</span>
+        <div style={{
+          width: '40px',
+          height: '40px',
+          borderRadius: '50%',
+          background: 'linear-gradient(135deg, #22c55e 0%, #3b82f6 100%)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          boxShadow: '0 0 20px rgba(34, 197, 94, 0.3)'
+        }}>
+          <span style={{ fontSize: '16px', color: '#ffffff', fontWeight: 800 }}>RN</span>
         </div>
 
         {/* Nav Links - Hidden on mobile */}
-        <div className="hidden md:flex gap-8 items-center">
+        <div style={{
+          display: 'none',
+          gap: '32px',
+          alignItems: 'center'
+        }}
+        className="nav-links"
+        >
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
-              className="text-sm text-zinc-400 font-medium hover:text-white transition-colors cursor-pointer"
+              style={{
+                fontSize: '14px',
+                color: '#a1a1aa',
+                fontWeight: 500,
+                transition: 'color 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#ffffff'}
+              onMouseLeave={(e) => e.target.style.color = '#a1a1aa'}
             >
               {item.label}
             </a>
@@ -39,11 +79,36 @@ export default function Navbar() {
         {/* CTA Button */}
         <a
           href="#contact"
-          className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-zinc-950 rounded-xl font-semibold text-sm hover:from-green-400 hover:to-green-500 transition-all duration-300 hover:scale-105 hover:shadow-[0_10px_20px_rgba(34,197,94,0.3)]"
+          style={{
+            padding: '10px 24px',
+            background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
+            color: '#09090b',
+            borderRadius: '12px',
+            fontSize: '14px',
+            fontWeight: 600,
+            transition: 'all 0.3s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'scale(1.05)';
+            e.target.style.boxShadow = '0 10px 20px rgba(34, 197, 94, 0.3)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'scale(1)';
+            e.target.style.boxShadow = 'none';
+          }}
         >
           Contacto
         </a>
       </div>
+
+      {/* Mobile menu - shows at bottom on mobile */}
+      <style>{`
+        @media (min-width: 768px) {
+          .nav-links {
+            display: flex !important;
+          }
+        }
+      `}</style>
     </motion.nav>
   );
 }
