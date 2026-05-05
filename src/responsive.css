@@ -71,11 +71,13 @@
   .hero-cta {
     flex-direction: column;
     gap: 10px;
+    align-items: center;
   }
   
   .btn-primary,
   .btn-secondary {
     width: 100%;
+    max-width: 300px;
     text-align: center;
     padding: 14px 20px;
     font-size: 14px;
@@ -84,6 +86,7 @@
   .hero-tech-pills {
     gap: 8px;
     justify-content: center;
+    padding: 0 10px;
   }
   
   .tech-pill {
@@ -94,6 +97,7 @@
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+    padding: 0 10px;
   }
   
   .skill-card {
@@ -103,6 +107,7 @@
   .services-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+    padding: 0 10px;
   }
   
   .service-card {
@@ -112,15 +117,17 @@
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+    padding: 0 10px;
   }
   
   .project-card {
-    margin: 0 10px;
+    margin: 0;
   }
   
   .section-title {
     font-size: 24px;
     text-align: center;
+    padding: 0 10px;
   }
   
   .section-subtitle {
@@ -162,21 +169,25 @@
   /* Proceso cards */
   .proceso-card {
     padding: 20px;
+    margin: 0 10px;
   }
   
   /* Soluciones cards */
   .solucion-card {
     padding: 20px;
+    margin: 0 10px;
   }
   
   /* Experience cards */
   .experience-card {
     padding: 20px;
+    margin: 0 10px;
   }
   
   /* About section */
   .about-grid {
     gap: 32px;
+    padding: 0 10px;
   }
   
   .about-stats {
@@ -184,17 +195,10 @@
     gap: 12px;
   }
   
-  .about-stat-value {
-    font-size: 20px;
-  }
-  
-  .about-stat-label {
-    font-size: 11px;
-  }
-  
   /* Contact */
   .contact-grid {
     gap: 32px;
+    padding: 0 10px;
   }
   
   .contact-form {
@@ -219,25 +223,6 @@
   .nav-cta {
     padding: 8px 16px;
     font-size: 12px;
-  }
-  
-  /* Stats card in About */
-  .about-stat-value {
-    font-size: 20px;
-  }
-  
-  .about-stat-label {
-    font-size: 11px;
-  }
-  
-  /* Experience icon */
-  .experience-icon {
-    font-size: 28px;
-  }
-  
-  /* Proceso step number */
-  .proceso-step {
-    font-size: 36px;
   }
 }
 
