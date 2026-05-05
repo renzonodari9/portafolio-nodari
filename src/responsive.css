@@ -1,0 +1,128 @@
+/* ===== RESPONSIVE MEDIA QUERIES ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  
+  .hero-text {
+    text-align: center;
+    order: 2;
+  }
+  
+  .hero-image-wrapper {
+    order: 1;
+    max-width: 280px;
+  }
+  
+  .hero-tech-pills {
+    justify-content: center;
+  }
+  
+  .hero-cta {
+    justify-content: center;
+  }
+  
+  .hero-social {
+    justify-content: center;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .hero-name {
+    font-size: 48px;
+  }
+  
+  .hero-title {
+    font-size: 20px;
+  }
+  
+  .hero-description {
+    font-size: 14px;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+  }
+  
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .section-title {
+    font-size: 28px;
+  }
+  
+  .section-subtitle {
+    font-size: 16px;
+  }
+  
+  .hero-stats-card {
+    position: static;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  
+  .hero-image-wrapper {
+    max-width: 240px;
+  }
+}
+
+/* Netbook / Small Laptop */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  .container {
+    max-width: 1024px;
+  }
+  
+  .hero-name {
+    font-size: 72px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1600px;
+  }
+  
+  .hero-name {
+    font-size: 96px;
+  }
+}

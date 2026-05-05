@@ -1,130 +1,114 @@
-import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
-  const links = [
-    { name: "Sobre mí", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experiencia", href: "#experience" },
-    { name: "Proyectos", href: "#projects" },
-    { name: "Servicios", href: "#services" },
-    { name: "Valor", href: "#value" },
-    { name: "Contacto", href: "#contact" },
+  const navItems = [
+    { label: "Inicio", href: "#hero" },
+    { label: "Sobre mí", href: "#about" },
+    { label: "Habilidades", href: "#skills" },
+    { label: "Proceso", href: "#proceso" },
+    { label: "Proyectos", href: "#projects" },
+    { label: "Contacto", href: "#contact" }
   ];
 
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-[#020617]/95 backdrop-blur-md border-b border-[#1f2937]" : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo - Larger */}
-            <div className="w-12 h-12 bg-[#22c55e] rounded-full flex items-center justify-center text-[#020617] font-bold text-xl shadow-lg shadow-[#22c55e]/20">
-              RN
-            </div>
+    <motion.nav
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        background: 'rgba(15, 15, 15, 0.8)',
+        backdropFilter: 'blur(20px)',
+        borderBottom: '1px solid rgba(63, 63, 70, 0.3)',
+        padding: '16px 0'
+      }}
+    >
+      <div style={{
+        maxWidth: '1280px',
+        margin: '0 auto',
+        padding: '0 24px',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}>
+        {/* Logo RN */}
+        <div style={{
+          width: '40px',
+          height: '40px',
+          borderRadius: '50%',
+          background: 'linear-gradient(135deg, #22c55e 0%, #3b82f6 100%)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          boxShadow: '0 0 20px rgba(34, 197, 94, 0.3)'
+        }}>
+          <span style={{ fontSize: '16px', color: '#ffffff', fontWeight: 800 }}>RN</span>
+        </div>
 
-            {/* Desktop Links - Larger */}
-            <div className="hidden md:flex items-center gap-2">
-              {links.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="px-5 py-2.5 rounded-xl text-base text-[#9ca3af] hover:text-white hover:bg-[#1f2937] transition-all font-medium"
-                >
-                  {link.name}
-                </a>
-              ))}
-              
-              {/* Social Icons - Larger */}
-              <div className="flex items-center gap-2 ml-4 pl-4 border-l border-[#1f2937]">
-                <a
-                  href="https://github.com/renzonodari9"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-xl text-[#9ca3af] hover:text-white hover:bg-[#1f2937] transition-all"
-                >
-                  <Github size={20} />
-                </a>
-                <a
-                  href="https://linkedin.com/in/renzonodari"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-3 rounded-xl text-[#9ca3af] hover:text-white hover:bg-[#1f2937] transition-all"
-                >
-                  <Linkedin size={20} />
-                </a>
-                <a
-                  href="mailto:renzonodari9@gmail.com"
-                  className="p-3 rounded-xl text-[#9ca3af] hover:text-white hover:bg-[#1f2937] transition-all"
-                >
-                  <Mail size={20} />
-                </a>
-              </div>
-            </div>
-
-            {/* Mobile Menu Button - Larger */}
-            <button
-              className="md:hidden p-3 text-white"
-              onClick={() => setMobileOpen(!mobileOpen)}
+        {/* Nav Links - Hidden on mobile */}
+        <div style={{
+          display: 'none',
+          gap: '32px',
+          alignItems: 'center'
+        }}
+        className="nav-links"
+        >
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              style={{
+                fontSize: '14px',
+                color: '#a1a1aa',
+                fontWeight: 500,
+                transition: 'color 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => e.target.style.color = '#ffffff'}
+              onMouseLeave={(e) => e.target.style.color = '#a1a1aa'}
             >
-              {mobileOpen ? <X size={28} /> : <Menu size={28} />}
-            </button>
-          </div>
+              {item.label}
+            </a>
+          ))}
         </div>
-      </nav>
 
-      {/* Mobile Menu */}
-      {mobileOpen && (
-        <div className="fixed inset-0 bg-[#020617] z-[999] pt-24 px-6">
-          <div className="flex flex-col gap-4">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-2xl py-4 border-b border-[#1f2937] text-[#9ca3af] hover:text-white font-medium"
-              >
-                {link.name}
-              </a>
-            ))}
-            
-            <div className="flex gap-4 mt-8">
-              <a
-                href="https://github.com/renzonodari9"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 py-4 bg-[#0f172a] border border-[#1f2937] rounded-2xl text-center text-white text-lg font-semibold flex items-center justify-center gap-2"
-              >
-                <Github size={24} />
-                GitHub
-              </a>
-              <a
-                href="https://linkedin.com/in/renzonodari"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 py-4 bg-[#0f172a] border border-[#1f2937] rounded-2xl text-center text-white text-lg font-semibold flex items-center justify-center gap-2"
-              >
-                <Linkedin size={24} />
-                LinkedIn
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+        {/* CTA Button */}
+        <a
+          href="#contact"
+          style={{
+            padding: '10px 24px',
+            background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',
+            color: '#09090b',
+            borderRadius: '12px',
+            fontSize: '14px',
+            fontWeight: 600,
+            transition: 'all 0.3s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'scale(1.05)';
+            e.target.style.boxShadow = '0 10px 20px rgba(34, 197, 94, 0.3)';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'scale(1)';
+            e.target.style.boxShadow = 'none';
+          }}
+        >
+          Contacto
+        </a>
+      </div>
+
+      {/* Mobile menu - shows at bottom on mobile */}
+      <style>{`
+        @media (min-width: 768px) {
+          .nav-links {
+            display: flex !important;
+          }
+        }
+      `}</style>
+    </motion.nav>
   );
 }
