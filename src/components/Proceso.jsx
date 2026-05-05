@@ -60,6 +60,7 @@ export default function Proceso() {
                 overflow: 'hidden',
                 transition: 'all 0.4s ease'
               }}
+              className="proceso-card"
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'rgba(34, 197, 94, 0.5)';
                 e.currentTarget.style.transform = 'translateY(-8px)';
@@ -82,7 +83,9 @@ export default function Proceso() {
                 lineHeight: 1,
                 marginBottom: '20px',
                 fontFamily: 'monospace'
-              }}>
+              }}
+              className="proceso-step"
+              >
                 {item.step}
               </div>
               

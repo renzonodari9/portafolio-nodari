@@ -79,6 +79,7 @@ export default function Navbar() {
         {/* CTA Button */}
         <a
           href="#contact"
+          className="nav-cta"
           style={{
             padding: '10px 24px',
             background: 'linear-gradient(135deg, #22c55e 0%, #16a34a 100%)',

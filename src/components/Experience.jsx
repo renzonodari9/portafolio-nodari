@@ -61,6 +61,7 @@ export default function Experience() {
                 overflow: 'hidden',
                 transition: 'all 0.4s ease'
               }}
+              className="experience-card"
               onMouseEnter={(e) => {
                 e.currentTarget.style.borderColor = 'rgba(34, 197, 94, 0.5)';
                 e.currentTarget.style.transform = 'translateY(-8px) scale(1.02)';
@@ -88,7 +89,9 @@ export default function Experience() {
               <div style={{
                 fontSize: '40px',
                 marginBottom: '20px'
-              }}>
+              }}
+              className="experience-icon"
+              >
                 {exp.icon}
               </div>
 
