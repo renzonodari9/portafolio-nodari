@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@tailwindcss/vite": "^4.2.4",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^12.38.0",
     "lucide-react": "^0.400.0",
@@ -19,6 +20,7 @@
     "react-dom": "^19.2.4",
     "react-intersection-observer": "^10.0.3",
     "react-tsparticles": "^2.12.2",
+    "tailwindcss": "^4.2.4",
     "tsparticles": "^3.9.1",
     "tsparticles-slim": "^2.12.0"
   },

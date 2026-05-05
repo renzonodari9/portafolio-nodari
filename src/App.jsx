@@ -12,7 +12,7 @@ import Footer from "./components/Footer"
 
 function App() {
   return (
-    <div style={{ backgroundColor: '#0f0f0f', color: '#ffffff', overflowX: 'hidden' }}>
+    <div className="bg-zinc-950 text-white overflow-x-hidden">
       <Navbar />
       <div id="hero">
         <Hero />
