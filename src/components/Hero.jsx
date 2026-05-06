@@ -4,10 +4,9 @@ import { ArrowRight, MapPin, Github, Linkedin, Mail, Sparkles } from "lucide-rea
 export default function Hero() {
   return (
     <section className="hero">
-      {/* Animated gradient orbs */}
       <div style={{
         position: 'absolute',
-        inset:0,
+        inset: 0,
         overflow: 'hidden',
         pointerEvents: 'none'
       }}>
@@ -56,7 +55,7 @@ export default function Hero() {
             className="hero-text"
             style={{ position: 'relative', zIndex: 2 }}
           >
-            {/* Badge with glow */}
+            {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20, scale: 0.9 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -100,7 +99,7 @@ export default function Hero() {
               transition={{ delay: 0.3, duration: 0.9 }}
               style={{ marginBottom: '20px' }}
             >
-              <h1 className="hero-name" style={{
+              <h1 style={{
                 fontSize: 'clamp(48px, 8vw, 88px)',
                 fontWeight: 800,
                 color: '#ffffff',
@@ -111,23 +110,38 @@ export default function Hero() {
                 Renzo Nodari
               </h1>
               
-              <p className="hero-title" style={{
+              <p style={{
                 fontSize: 'clamp(20px, 3vw, 28px)',
                 color: '#a1a1aa',
                 marginBottom: '16px',
                 fontWeight: 300,
-                letterSpacing: '-0.01em'
-              }}>Desarrollador Web</p>
+                letterSpacing: '-0.01em',
+                textAlign: 'center'
+              }}>Senior Full Stack Developer</p>
+              
+              <p style={{
+                fontSize: '16px',
+                color: '#71717a',
+                marginBottom: '40px',
+                maxWidth: '600px',
+                lineHeight: 1.7,
+                letterSpacing: '0.01em',
+                margin: '0 auto',
+                textAlign: 'center'
+              }}>
+                Especializado en arquitectura de software escalable. Transformo requerimientos complejos 
+                en soluciones web de alto rendimiento con React, Node.js y MongoDB.
+              </p>
             </motion.div>
 
-            {/* Tech Pills */}
+            {/* Tech stack */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.6 }}
               className="hero-tech-pills"
             >
-              {['React', 'Node.js', 'MongoDB', 'Express', 'TypeScript'].map((tech, i) => (
+              {['React', 'Node.js', 'MongoDB', 'TypeScript', 'Express'].map((tech, i) => (
                 <motion.span
                   key={tech}
                   initial={{ opacity: 0, scale: 0.8, y: 10 }}
@@ -243,7 +257,7 @@ export default function Hero() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   padding: '18px 36px',
-                  background: 'rgba(39, 39, 42, 0.5)',
+                  background: 'rgba(39, 39, 42, 0.4)',
                   color: '#d4d4d8',
                   border: '1px solid rgba(63, 63, 70, 0.6)',
                   borderRadius: '16px',
@@ -260,7 +274,7 @@ export default function Hero() {
                 onMouseLeave={(e) => {
                   e.target.style.color = '#d4d4d8';
                   e.target.style.borderColor = 'rgba(63, 63, 70, 0.6)';
-                  e.target.style.background = 'rgba(39, 39, 42, 0.5)';
+                  e.target.style.background = 'rgba(39, 39, 42, 0.4)';
                 }}
               >
                 Contacto
