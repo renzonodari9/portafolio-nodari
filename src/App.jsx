@@ -5,7 +5,6 @@ import Skills from "./components/Skills"
 import Proceso from "./components/Proceso"
 import Soluciones from "./components/Soluciones"
 import Projects from "./components/Projects"
-import Services from "./components/Services"
 import Experience from "./components/Experience"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
@@ -31,9 +30,6 @@ function App() {
       </div>
       <div id="projects">
         <Projects />
-      </div>
-      <div id="services">
-        <Services />
       </div>
       <div id="experience">
         <Experience />

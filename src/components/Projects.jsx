@@ -3,24 +3,26 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "E-commerce Platform",
-    description: "Arquitectura de microservicios con React, Node.js y MongoDB. Panel admin + tienda con 99.9% uptime.",
+    description: "Plataforma completa de comercio electrónico. Permite gestion de productos, carrito de compras, pagos y panel de administración con métricas en tiempo real.",
     image: "/img-app.png",
     tech: ["React", "Node.js", "MongoDB", "Express"],
     links: [
       { label: "Ver Tienda", url: "https://ecommerce-store-v8hq.onrender.com" },
       { label: "Admin Panel", url: "https://ecommerce-admin-yvnu.onrender.com" }
     ],
-    metrics: ["99.9% uptime", "500+ users", "<200ms API"]
+    herramientas: ["JWT Auth", "Stripe API", "Multer", "Bcrypt"],
+    resultado: "99.9% uptime, 500+ usuarios"
   },
   {
     title: "Weather Dashboard",
-    description: "Dashboard en tiempo real con APIs externas, caché inteligente y diseño responsive óptimo.",
+    description: "Dashboard del clima con datos en tiempo real. Consume APIs externas, implementa caché inteligente y diseño responsive óptimo para consultas rápidas.",
     image: "/img-app.png",
-    tech: ["React", "API", "CSS"],
+    tech: ["React", "API REST", "CSS Modules"],
     links: [
       { label: "Ver Demo", url: "https://weather-app-front-kdpl.onrender.com" }
     ],
-    metrics: ["Real-time data", "<100ms response", "PWA ready"]
+    herramientas: ["Fetch API", "LocalStorage", "Geolocation API", "Chart.js"],
+    resultado: "Real-time data, <100ms response"
   }
 ];
 
@@ -36,11 +38,15 @@ export default function Projects() {
         >
           <h2 className="section-title" style={{textAlign: 'center'}}>Proyectos Destacados</h2>
           <p className="section-subtitle" style={{textAlign: 'center', margin: '0 auto'}}>
-            Soluciones empresariales con métricas reales
+            Soluciones empresariales con explicación detallada
           </p>
         </motion.div>
 
-        <div className="projects-grid">
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
+          gap: '32px'
+        }}>
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -59,22 +65,22 @@ export default function Projects() {
                 <h3 className="project-title">{project.title}</h3>
                 <p className="project-description">{project.description}</p>
                 
-                {/* Metrics */}
+                {/* Herramientas utilizadas */}
                 <div style={{
                   display: 'flex',
                   gap: '12px',
                   marginBottom: '16px',
                   flexWrap: 'wrap'
                 }}>
-                  {project.metrics.map((m) => (
-                    <span key={m} style={{
+                  {project.herramientas.map((h) => (
+                    <span key={h} style={{
                       padding: '4px 10px',
-                      background: 'rgba(34, 197, 94, 0.08)',
-                      color: '#4ade80',
+                      background: 'rgba(59, 130, 246, 0.1)',
+                      color: '#60a5fa',
                       borderRadius: '6px',
                       fontSize: '11px',
                       fontWeight: 600
-                    }}>{m}</span>
+                    }}>{h}</span>
                   ))}
                 </div>
 
@@ -83,6 +89,22 @@ export default function Projects() {
                     <span key={t} className="project-tech-tag">{t}</span>
                   ))}
                 </div>
+
+                {/* Resultado */}
+                <div style={{
+                  display: 'inline-block',
+                  padding: '4px 12px',
+                  background: 'rgba(34, 197, 94, 0.1)',
+                  border: '1px solid rgba(34, 197, 94, 0.3)',
+                  borderRadius: '8px',
+                  marginBottom: '16px',
+                  fontSize: '12px',
+                  color: '#4ade80',
+                  fontWeight: 600
+                }}>
+                  ✅ {project.resultado}
+                </div>
+
                 <div className="project-links">
                   {project.links?.map((link) => (
                     <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="project-link">

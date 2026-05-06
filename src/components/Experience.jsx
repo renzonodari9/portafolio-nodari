@@ -3,27 +3,33 @@ import { motion } from "framer-motion";
 const experiences = [
   {
     date: "2024 - Presente",
-    title: "Senior Full Stack Developer",
+    title: "Full Stack Developer",
     company: "Freelance",
-    description: "Arquitectura y desarrollo de aplicaciones empresariales. Implementación de microservicios, CI/CD y monitorización con alertas proactivas.",
-    icon: "🚀",
-    achivements: ["4+ proyectos entregados", "99.9% uptime", "Tests automatizados"]
+    role: "Backend & Frontend",
+    description: "Arquitectura y desarrollo de aplicaciones empresariales. Implementación de microservicios, CI/CD y monitoreo proactivo.",
+    logros: ["4+ proyectos entregados", "99.9% uptime", "Tests automatizados", "JWT implementado"],
+    backend: ["Node.js", "Express", "MongoDB", "Redis"],
+    frontend: ["React", "TypeScript", "Tailwind CSS"]
   },
   {
     date: "2023 - 2024",
-    title: "Mid-Level Frontend Dev",
+    title: "Frontend Developer",
     company: "Proyectos personales",
+    role: "Frontend Especializado",
     description: "Liderazgo técnico en migraciones complejas de JavaScript a TypeScript. Optimización de Core Web Vitals hasta 95+ puntos.",
-    icon: "🎨",
-    achivements: ["95+ PageSpeed", "0 critical bugs", "100% TypeScript"]
+    logros: ["95+ PageSpeed", "0 critical bugs", "100% TypeScript", "PWA implementada"],
+    frontend: ["React", "TypeScript", "API Integration", "PWA"],
+    backend: ["REST API", "Node.js básico"]
   },
   {
     date: "2022 - 2023",
     title: "Junior Full Stack",
     company: "Autodidacta → Senior",
+    role: "Backend + Frontend",
     description: "Formación intensiva en arquitectura de software, patrones de diseño y mejores prácticas. De junior a senior en 24 meses.",
-    icon: "📚",
-    achivements: ["2000+ horas", "15+ proyectos", "Senior en 2 años"]
+    logros: ["2000+ horas", "15+ proyectos", "Senior en 2 años", "Clean Code"],
+    backend: ["Node.js", "Express", "MongoDB"],
+    frontend: ["React", "JavaScript", "HTML/CSS"]
   }
 ];
 
@@ -88,14 +94,6 @@ export default function Experience() {
                 pointerEvents: 'none'
               }} />
 
-              {/* Icon */}
-              <div className="experience-icon" style={{
-                fontSize: '40px',
-                marginBottom: '20px'
-              }}>
-                {exp.icon}
-              </div>
-
               {/* Date badge */}
               <div style={{
                 display: 'inline-block',
@@ -122,14 +120,14 @@ export default function Experience() {
                 {exp.title}
               </h3>
               
-              <p style={{
+              <div style={{
                 fontSize: '15px',
                 color: '#22c55e',
-                marginBottom: '16px',
+                marginBottom: '12px',
                 fontWeight: 600
               }}>
-                {exp.company}
-              </p>
+                {exp.company} • <span style={{color: '#60a5fa'}}>{exp.role}</span>
+              </div>
               
               <p style={{
                 fontSize: '14px',
@@ -140,20 +138,76 @@ export default function Experience() {
                 {exp.description}
               </p>
 
-              {/* Achievements */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                {exp.achivements.map((ach) => (
-                  <div key={ach} style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    fontSize: '13px',
-                    color: '#d4d4d8'
-                  }}>
-                    <span style={{ color: '#22c55e', fontSize: '14px' }}>✓</span>
-                    {ach}
+              {/* Logros */}
+              <div style={{ marginBottom: '20px' }}>
+                <p style={{
+                  fontSize: '12px',
+                  color: '#71717a',
+                  marginBottom: '8px',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.05em'
+                }}>Logros:</p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                  {exp.logros.map((logro) => (
+                    <div key={logro} style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      fontSize: '13px',
+                      color: '#d4d4d8'
+                    }}>
+                      <span style={{ color: '#22c55e', fontSize: '14px' }}>✓</span>
+                      {logro}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Backend & Frontend */}
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                <div>
+                  <p style={{
+                    fontSize: '11px',
+                    color: '#60a5fa',
+                    marginBottom: '6px',
+                    fontWeight: 600,
+                    textTransform: 'uppercase'
+                  }}>Backend:</p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                    {exp.backend.map((t) => (
+                      <span key={t} style={{
+                        padding: '2px 8px',
+                        background: 'rgba(96, 165, 250, 0.1)',
+                        color: '#60a5fa',
+                        borderRadius: '4px',
+                        fontSize: '10px',
+                        fontWeight: 600
+                      }}>{t}</span>
+                    ))}
                   </div>
-                ))}
+                </div>
+                <div>
+                  <p style={{
+                    fontSize: '11px',
+                    color: '#4ade80',
+                    marginBottom: '6px',
+                    fontWeight: 600,
+                    textTransform: 'uppercase'
+                  }}>Frontend:</p>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+                    {exp.frontend.map((t) => (
+                      <span key={t} style={{
+                        padding: '2px 8px',
+                        background: 'rgba(74, 222, 128, 0.1)',
+                        color: '#4ade80',
+                        borderRadius: '4px',
+                        fontSize: '10px',
+                        fontWeight: 600
+                      }}>{t}</span>
+                    ))}
+                  </div>
+                </div>
               </div>
 
               {/* Decorative line */}

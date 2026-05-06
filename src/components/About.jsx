@@ -1,12 +1,6 @@
 import { motion } from "framer-motion";
 
 export default function About() {
-  const stats = [
-    { value: "4+", label: "Proyectos", desc: "Entregados" },
-    { value: "2+", label: "Años", desc: "Exp. profesional" },
-    { value: "100%", label: "Compromiso", desc: "Garantizado" }
-  ];
-
   return (
     <section id="about" style={{ backgroundColor: '#1a1a1a', padding: '96px 0' }}>
       <div className="container">
@@ -16,7 +10,26 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="section-title" style={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px'}}>
+          <h2 className="section-title" style={{
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'center', 
+            gap: '12px',
+            flexDirection: 'column'
+          }}>
+            <img 
+              src="/mifoto.png" 
+              alt="Renzo Nodari" 
+              style={{
+                width: '200px',
+                height: '200px',
+                borderRadius: '50%',
+                objectFit: 'cover',
+                border: '3px solid rgba(34, 197, 94, 0.5)',
+                boxShadow: '0 0 30px rgba(34, 197, 94, 0.3)',
+                marginBottom: '20px'
+              }}
+            />
             Sobre mí
             <span style={{
               width: '40px',
@@ -31,8 +44,8 @@ export default function About() {
               <span style={{fontSize: '16px', color: '#ffffff', fontWeight: 800}}>RN</span>
             </span>
           </h2>
-          <p className="section-subtitle">
-            Arquitecto soluciones digitales que generan valor real
+          <p className="section-subtitle" style={{textAlign: 'center', margin: '0 auto'}}>
+            Desarrollador backend especializado en soluciones escalables
           </p>
         </motion.div>
 
@@ -44,35 +57,27 @@ export default function About() {
             transition={{ duration: 0.8 }}
           >
             <p className="about-text" style={{fontSize: '18px', lineHeight: 1.8, marginBottom: '24px'}}>
-              <strong style={{color: '#22c55e'}}>Senior Full Stack Developer</strong> con +2 años transformando requerimientos complejos en productos digitales escalables. Mi enfoque combina código limpio, arquitectura sólida y obsesión por la experiencia del usuario.
+              Soy un <strong style={{color: '#22c55e'}}>desarrollador backend especializado</strong> con +2 años creando 
+              arquitecturas de software robustas. Mi enfoque está en el rendimiento, seguridad y escalabilidad del servidor.
             </p>
             <p className="about-text" style={{fontSize: '16px', lineHeight: 1.8}}>
-              Especializado en el ecosistema JavaScript/TypeScript, diseño APIs REST eficientes y frontends reactivos que manejan alto tráfico. Cada línea de código está pensada para escalar.
+              Trabajo con <strong style={{color: '#22c55e'}}>Node.js, Express, MongoDB</strong> y tecnologías modernas 
+              para crear APIs REST eficientes y sistemas que manejan alto tráfico.
             </p>
 
             <div className="about-stats">
-              {stats.map((stat) => (
-                <div key={stat.label} className="about-stat" style={{
-                  padding: '20px',
-                  background: 'linear-gradient(135deg, #27272a 0%, #1a1a1a 100%)',
-                  border: '1px solid #3f3f46',
-                  borderRadius: '16px',
-                  transition: 'all 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(34, 197, 94, 0.5)';
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = '#3f3f46';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-                >
-                  <div className="about-stat-value" style={{fontSize: '32px', fontWeight: 800, color: '#22c55e'}}>{stat.value}</div>
-                  <div className="about-stat-label" style={{fontSize: '14px', color: '#a1a1aa', marginTop: '4px'}}>{stat.label}</div>
-                  <div style={{fontSize: '11px', color: '#71717a', marginTop: '2px'}}>{stat.desc}</div>
-                </div>
-              ))}
+              <div className="about-stat">
+                <div className="about-stat-value">4+</div>
+                <div className="about-stat-label">Proyectos</div>
+              </div>
+              <div className="about-stat">
+                <div className="about-stat-value">2+</div>
+                <div className="about-stat-label">Años exp.</div>
+              </div>
+              <div className="about-stat">
+                <div className="about-stat-value">100%</div>
+                <div className="about-stat-label">Compromiso</div>
+              </div>
             </div>
           </motion.div>
 
@@ -82,33 +87,32 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
             style={{ 
-              background: 'linear-gradient(135deg, #27272a 0%, #1a1a1a 100%)',
-              padding: '32px',
+              backgroundColor: '#27272a', 
+              padding: '32px', 
               borderRadius: '20px',
               border: '1px solid #3f3f46'
             }}
           >
             <h3 style={{fontSize: '22px', fontWeight: 700, color: '#ffffff', marginBottom: '24px'}}>
-              Valor diferencial
+              Mi enfoque como backend
             </h3>
             <ul style={{listStyle: 'none', padding: 0}}>
               {[
-                { icon: '⚡', text: 'Entrega continua con CI/CD y tests automatizados' },
-                { icon: '🛡', text: 'Código mantenible y documentado' },
-                { icon: '📈', text: 'Optimización de rendimiento (90+ PageSpeed)' },
-                { icon: '🎯', text: 'Enfoque en conversión y UX' },
-                { icon: '🔄', text: 'Refactorización proactiva' }
+                { icon: '⚡', text: 'APIs REST optimizadas (<200ms)' },
+                { icon: '🛡️', text: 'Código mantenible y escalable' },
+                { icon: '📈', text: 'Arquitectura de microservicios' },
+                { icon: '🔐', text: 'Autenticación JWT segura' },
+                { icon: '🗄️', text: 'Diseño de bases de datos' }
               ].map((item) => (
-                <li key={item.text} style={{ 
+                <li key={item.text} style={{
                   display: 'flex', 
-                  alignItems: 'flex-start', 
+                  alignItems: 'center', 
                   gap: '12px', 
                   marginBottom: '16px',
                   color: '#a1a1aa',
-                  fontSize: '15px',
-                  lineHeight: 1.6
+                  fontSize: '15px'
                 }}>
-                  <span style={{ color: '#22c55e', fontSize: '18px', flexShrink: 0 }}>{item.icon}</span>
+                  <span style={{color: '#22c55e', fontSize: '18px'}}>{item.icon}</span>
                   {item.text}
                 </li>
               ))}
