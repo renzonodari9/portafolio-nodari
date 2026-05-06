@@ -4,124 +4,143 @@ const proceso = [
   {
     step: "01",
     title: "Descubrimiento",
-    description: "Entiendo tus objetivos, público y requerimientos técnicos para planificar la mejor solución."
+    description: "Analizo objetivos, necesidades del negocio y requerimientos técnicos para definir una solución clara."
   },
   {
     step: "02",
-    title: "Diseño UX/UI",
-    description: "Creo wireframes y prototipos interactivos enfocados en la experiencia del usuario."
+    title: "Diseño",
+    description: "Estructuro la arquitectura y experiencia del usuario priorizando claridad y escalabilidad."
   },
   {
     step: "03",
     title: "Desarrollo",
-    description: "Código limpio siguiendo mejores prácticas, con tests y revisiones continuas."
+    description: "Implemento soluciones con código limpio, buenas prácticas y foco en rendimiento."
   },
   {
     step: "04",
     title: "Despliegue",
-    description: "Release automatizado con CI/CD, monitoreo y optimización de rendimiento."
+    description: "Publicación optimizada con monitoreo, mejoras continuas y estabilidad en producción."
   }
 ];
 
 export default function Proceso() {
   return (
-    <section id="proceso" className="section" style={{ backgroundColor: '#1a1a1a' }}>
+    <section id="proceso" style={{ backgroundColor: '#0f0f0f', padding: '100px 0' }}>
       <div className="container">
+
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
+          style={{ textAlign: 'center', marginBottom: '60px' }}
         >
-          <h2 className="section-title">Mi Proceso</h2>
-          <p className="section-subtitle">
-            Metodología profesional para resultados excepcionales
+          <h2 style={{ color: '#fff', fontSize: '32px', marginBottom: '10px' }}>
+            Mi Proceso
+          </h2>
+          <p style={{ color: '#a1a1aa' }}>
+            Metodología enfocada en resultados reales y escalables
           </p>
         </motion.div>
 
+        {/* Timeline */}
         <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-          gap: '24px'
+          position: 'relative',
+          maxWidth: '900px',
+          margin: '0 auto'
         }}>
-          {proceso.map((item, index) => (
-            <motion.div
-              key={item.step}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.15, duration: 0.6 }}
-              style={{
-                background: 'linear-gradient(135deg, #27272a 0%, #1a1a1a 100%)',
-                border: '1px solid #3f3f46',
-                borderRadius: '20px',
-                padding: '32px',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.4s ease'
-              }}
-              className="proceso-card"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = 'rgba(34, 197, 94, 0.5)';
-                e.currentTarget.style.transform = 'translateY(-8px)';
-                e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#3f3f46';
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
-              {/* Step number with gradient */}
-              <div style={{
-                fontSize: '48px',
-                fontWeight: 900,
-                background: 'linear-gradient(135deg, rgba(34, 197, 94, 0.3) 0%, rgba(59, 130, 246, 0.3) 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                lineHeight: 1,
-                marginBottom: '20px',
-                fontFamily: 'monospace'
-              }}
-              className="proceso-step"
-              >
-                {item.step}
-              </div>
-              
-              <h3 style={{
-                fontSize: '20px',
-                fontWeight: 700,
-                color: '#ffffff',
-                marginBottom: '12px'
-              }}>
-                {item.title}
-              </h3>
-              
-              <p style={{
-                fontSize: '14px',
-                color: '#a1a1aa',
-                lineHeight: 1.7
-              }}>
-                {item.description}
-              </p>
 
-              {/* Decorative line */}
-              <div style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: '3px',
-                background: 'linear-gradient(90deg, #22c55e 0%, #3b82f6 100%)',
-                opacity: 0,
-                transition: 'opacity 0.3s ease'
-              }}
-              onMouseEnter={(e) => e.target.style.opacity = '1'}
-              onMouseLeave={(e) => e.target.style.opacity = '0'}
-              />
-            </motion.div>
-          ))}
+          {/* Línea vertical */}
+          <div style={{
+            position: 'absolute',
+            left: '50%',
+            top: 0,
+            bottom: 0,
+            width: '2px',
+            background: 'linear-gradient(to bottom, #22c55e, #3b82f6)',
+            transform: 'translateX(-50%)',
+            opacity: 0.3
+          }} />
+
+          {proceso.map((item, index) => {
+            const isLeft = index % 2 === 0;
+
+            return (
+              <motion.div
+                key={item.step}
+                initial={{ opacity: 0, x: isLeft ? -40 : 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.2 }}
+                style={{
+                  display: 'flex',
+                  justifyContent: isLeft ? 'flex-start' : 'flex-end',
+                  marginBottom: '40px',
+                  position: 'relative'
+                }}
+              >
+
+                {/* Card */}
+                <div style={{
+                  width: '45%',
+                  background: '#1a1a1a',
+                  border: '1px solid #2a2a2a',
+                  borderRadius: '14px',
+                  padding: '22px',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.borderColor = '#22c55e';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.borderColor = '#2a2a2a';
+                }}
+                >
+
+                  <span style={{
+                    fontSize: '12px',
+                    color: '#22c55e',
+                    fontWeight: 600
+                  }}>
+                    {item.step}
+                  </span>
+
+                  <h3 style={{
+                    color: '#fff',
+                    fontSize: '18px',
+                    margin: '8px 0'
+                  }}>
+                    {item.title}
+                  </h3>
+
+                  <p style={{
+                    color: '#a1a1aa',
+                    fontSize: '14px',
+                    lineHeight: 1.6
+                  }}>
+                    {item.description}
+                  </p>
+                </div>
+
+                {/* Punto en la línea */}
+                <div style={{
+                  position: 'absolute',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  width: '14px',
+                  height: '14px',
+                  borderRadius: '50%',
+                  background: '#22c55e',
+                  boxShadow: '0 0 15px rgba(34,197,94,0.5)'
+                }} />
+
+              </motion.div>
+            );
+          })}
+
         </div>
       </div>
     </section>

@@ -3,112 +3,181 @@ import { motion } from "framer-motion";
 const projects = [
   {
     title: "E-commerce Platform",
-    description: "Plataforma completa de comercio electrónico. Permite gestion de productos, carrito de compras, pagos y panel de administración con métricas en tiempo real.",
+    description:
+      "Plataforma escalable de comercio electrónico con panel admin, gestión de productos y sistema de pagos integrado.",
     image: "/img-app.png",
     tech: ["React", "Node.js", "MongoDB", "Express"],
     links: [
-      { label: "Ver Tienda", url: "https://ecommerce-store-v8hq.onrender.com" },
-      { label: "Admin Panel", url: "https://ecommerce-admin-yvnu.onrender.com" }
+      { label: "Tienda", url: "https://ecommerce-store-v8hq.onrender.com" },
+      { label: "Admin", url: "https://ecommerce-admin-yvnu.onrender.com" },
     ],
-    herramientas: ["JWT Auth", "Stripe API", "Multer", "Bcrypt"],
-    resultado: "99.9% uptime, 500+ usuarios"
+    tools: ["JWT Auth", "Stripe", "Multer", "Bcrypt"],
   },
   {
     title: "Weather Dashboard",
-    description: "Dashboard del clima con datos en tiempo real. Consume APIs externas, implementa caché inteligente y diseño responsive óptimo para consultas rápidas.",
+    description:
+      "Dashboard del clima en tiempo real con APIs externas, caché optimizado y UI responsive.",
     image: "/img-app.png",
-    tech: ["React", "API REST", "CSS Modules"],
+    tech: ["React", "API REST", "CSS"],
     links: [
-      { label: "Ver Demo", url: "https://weather-app-front-kdpl.onrender.com" }
+      { label: "Demo", url: "https://weather-app-front-kdpl.onrender.com" },
     ],
-    herramientas: ["Fetch API", "LocalStorage", "Geolocation API", "Chart.js"],
-    resultado: "Real-time data, <100ms response"
-  }
+    tools: ["Fetch API", "LocalStorage", "Geolocation", "Chart.js"],
+  },
 ];
 
 export default function Projects() {
   return (
-    <section id="projects" style={{ backgroundColor: '#0f0f0f', padding: '96px 0' }}>
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="section-title" style={{textAlign: 'center'}}>Proyectos Destacados</h2>
-          <p className="section-subtitle" style={{textAlign: 'center', margin: '0 auto'}}>
-            Soluciones empresariales con explicación detallada
+    <section style={{ padding: "100px 20px", background: "#0f0f0f" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+
+        {/* HEADER */}
+        <div style={{ textAlign: "center", marginBottom: "60px" }}>
+          <h2 style={{ fontSize: "36px", color: "#fff", fontWeight: 800 }}>
+            Proyectos
+          </h2>
+          <p style={{ color: "#a1a1aa", marginTop: "10px" }}>
+            Soluciones reales enfocadas en backend, performance y escalabilidad
           </p>
-        </motion.div>
+        </div>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
-          gap: '32px'
-        }}>
-          {projects.map((project, index) => (
+        {/* GRID */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+            gap: "24px",
+          }}
+        >
+          {projects.map((p, index) => (
             <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
+              key={index}
+              initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2, duration: 0.6 }}
-              className="project-card"
+              transition={{ delay: index * 0.15 }}
+              whileHover={{ y: -8 }}
+              style={{
+                background: "linear-gradient(145deg, #151515, #1c1c1c)",
+                border: "1px solid #2a2a2a",
+                borderRadius: "18px",
+                overflow: "hidden",
+                transition: "0.3s",
+              }}
             >
-              <img 
-                src={project.image} 
-                alt={project.title}
-                className="project-image"
-              />
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                
-                {/* Herramientas utilizadas */}
-                <div style={{
-                  display: 'flex',
-                  gap: '12px',
-                  marginBottom: '16px',
-                  flexWrap: 'wrap'
-                }}>
-                  {project.herramientas.map((h) => (
-                    <span key={h} style={{
-                      padding: '4px 10px',
-                      background: 'rgba(59, 130, 246, 0.1)',
-                      color: '#60a5fa',
-                      borderRadius: '6px',
-                      fontSize: '11px',
-                      fontWeight: 600
-                    }}>{h}</span>
+              {/* IMAGE */}
+              <div style={{ overflow: "hidden" }}>
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  style={{
+                    width: "100%",
+                    height: "190px",
+                    objectFit: "cover",
+                    transition: "0.4s",
+                  }}
+                  onMouseOver={(e) =>
+                    (e.currentTarget.style.transform = "scale(1.05)")
+                  }
+                  onMouseOut={(e) =>
+                    (e.currentTarget.style.transform = "scale(1)")
+                  }
+                />
+              </div>
+
+              {/* CONTENT */}
+              <div style={{ padding: "22px" }}>
+                <h3 style={{ color: "#fff", fontSize: "20px" }}>
+                  {p.title}
+                </h3>
+
+                <p
+                  style={{
+                    color: "#a1a1aa",
+                    fontSize: "14px",
+                    marginTop: "8px",
+                    lineHeight: 1.6,
+                  }}
+                >
+                  {p.description}
+                </p>
+
+                {/* TOOLS */}
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "6px",
+                    marginTop: "14px",
+                  }}
+                >
+                  {p.tools.map((t) => (
+                    <span
+                      key={t}
+                      style={{
+                        fontSize: "11px",
+                        padding: "4px 8px",
+                        borderRadius: "6px",
+                        background: "rgba(59,130,246,0.1)",
+                        color: "#93c5fd",
+                        border: "1px solid rgba(59,130,246,0.2)",
+                      }}
+                    >
+                      {t}
+                    </span>
                   ))}
                 </div>
 
-                <div className="project-tech">
-                  {project.tech.map((t) => (
-                    <span key={t} className="project-tech-tag">{t}</span>
+                {/* TECH */}
+                <div
+                  style={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "6px",
+                    marginTop: "10px",
+                  }}
+                >
+                  {p.tech.map((t) => (
+                    <span
+                      key={t}
+                      style={{
+                        fontSize: "11px",
+                        padding: "4px 8px",
+                        borderRadius: "6px",
+                        background: "rgba(34,197,94,0.1)",
+                        color: "#6ee7b7",
+                        border: "1px solid rgba(34,197,94,0.2)",
+                      }}
+                    >
+                      {t}
+                    </span>
                   ))}
                 </div>
 
-                {/* Resultado */}
-                <div style={{
-                  display: 'inline-block',
-                  padding: '4px 12px',
-                  background: 'rgba(34, 197, 94, 0.1)',
-                  border: '1px solid rgba(34, 197, 94, 0.3)',
-                  borderRadius: '8px',
-                  marginBottom: '16px',
-                  fontSize: '12px',
-                  color: '#4ade80',
-                  fontWeight: 600
-                }}>
-                  ✅ {project.resultado}
-                </div>
-
-                <div className="project-links">
-                  {project.links?.map((link) => (
-                    <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="project-link">
-                      {link.label}
+                {/* LINKS */}
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "10px",
+                    marginTop: "18px",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  {p.links.map((l) => (
+                    <a
+                      key={l.label}
+                      href={l.url}
+                      target="_blank"
+                      style={{
+                        padding: "8px 12px",
+                        background: "#22c55e",
+                        color: "#000",
+                        borderRadius: "8px",
+                        fontSize: "13px",
+                        fontWeight: 600,
+                        textDecoration: "none",
+                      }}
+                    >
+                      {l.label}
                     </a>
                   ))}
                 </div>

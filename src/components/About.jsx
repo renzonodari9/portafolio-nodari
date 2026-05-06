@@ -2,124 +2,130 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="about" style={{ backgroundColor: '#1a1a1a', padding: '96px 0' }}>
+    <section id="about" style={{ backgroundColor: "#0f0f0f", padding: "110px 0" }}>
       <div className="container">
+
+        {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
+          style={{
+            textAlign: "center",
+            marginBottom: "70px"
+          }}
         >
-          <h2 className="section-title" style={{
-            display: 'flex', 
-            alignItems: 'center', 
-            justifyContent: 'center', 
-            gap: '12px',
-            flexDirection: 'column'
+          {/* FOTO */}
+          <img
+            src="/mifoto.png"
+            alt="Renzo Nodari"
+            style={{
+              width: "150px",
+              height: "150px",
+              borderRadius: "50%",
+              objectFit: "cover",
+              border: "3px solid rgba(34, 197, 94, 0.4)",
+              boxShadow: "0 0 40px rgba(34, 197, 94, 0.15)",
+              marginBottom: "20px"
+            }}
+          />
+
+          {/* TITULO */}
+          <h2 style={{
+            fontSize: "34px",
+            fontWeight: 800,
+            color: "#fff",
+            marginBottom: "10px",
+            letterSpacing: "-0.02em"
           }}>
-            <img 
-              src="/mifoto.png" 
-              alt="Renzo Nodari" 
-              style={{
-                width: 'clamp(150px, 40vw, 200px)',
-                height: 'clamp(150px, 40vw, 200px)',
-                borderRadius: '50%',
-                objectFit: 'cover',
-                border: '3px solid rgba(34, 197, 94, 0.5)',
-                boxShadow: '0 0 30px rgba(34, 197, 94, 0.3)',
-                marginBottom: '20px',
-                display: 'block',
-                margin: '0 auto 20px'
-              }}
-            />
             Sobre mí
-            <span style={{
-              width: '40px',
-              height: '40px',
-              borderRadius: '50%',
-              background: 'linear-gradient(135deg, #22c55e 0%, #3b82f6 100%)',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 0 15px rgba(34, 197, 94, 0.3)'
-            }}>
-              <span style={{fontSize: '16px', color: '#ffffff', fontWeight: 800}}>RN</span>
-            </span>
           </h2>
-          <p className="section-subtitle" style={{textAlign: 'center', margin: '0 auto'}}>
-            Desarrollador backend especializado en soluciones escalables
+
+          <p style={{
+            color: "#a1a1aa",
+            maxWidth: "600px",
+            margin: "0 auto",
+            fontSize: "15px"
+          }}>
+            Desarrollador backend enfocado en construir sistemas escalables, eficientes y listos para producción.
           </p>
         </motion.div>
 
-        <div className="about-grid">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-          >
-            <p className="about-text" style={{fontSize: '18px', lineHeight: 1.8, marginBottom: '24px'}}>
-              Soy un <strong style={{color: '#22c55e'}}>desarrollador backend especializado</strong> con +2 años creando 
-              arquitecturas de software robustas. Mi enfoque está en el rendimiento, seguridad y escalabilidad del servidor.
-            </p>
-            <p className="about-text" style={{fontSize: '16px', lineHeight: 1.8}}>
-              Trabajo con <strong style={{color: '#22c55e'}}>Node.js, Express, MongoDB</strong> y tecnologías modernas 
-              para crear APIs REST eficientes y sistemas que manejan alto tráfico.
-            </p>
+        {/* GRID */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+          gap: "40px",
+          alignItems: "center"
+        }}>
 
-            <div className="about-stats">
-              <div className="about-stat">
-                <div className="about-stat-value">4+</div>
-                <div className="about-stat-label">Proyectos</div>
-              </div>
-              <div className="about-stat">
-                <div className="about-stat-value">2+</div>
-                <div className="about-stat-label">Años exp.</div>
-              </div>
-              <div className="about-stat">
-                <div className="about-stat-value">100%</div>
-                <div className="about-stat-label">Compromiso</div>
-              </div>
-            </div>
-          </motion.div>
+           {/* TEXTO */}
+           <motion.div
+             initial={{ opacity: 0, x: -30 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             viewport={{ once: true }}
+             transition={{ duration: 0.7 }}
+           >
+             <p style={{
+               fontSize: "16px",
+               lineHeight: 1.8,
+               color: "#d4d4d8",
+               marginBottom: "18px"
+             }}>
+               Desarrollador backend especializado en la creacion de APIs REST utilizando Node.js y Mongo DB
+             </p>
+           </motion.div>
 
+          {/* CARD DERECHA */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            style={{ 
-              backgroundColor: '#27272a', 
-              padding: '32px', 
-              borderRadius: '20px',
-              border: '1px solid #3f3f46'
+            transition={{ duration: 0.7 }}
+            style={{
+              background: "rgba(39, 39, 42, 0.5)",
+              border: "1px solid #2a2a2a",
+              borderRadius: "16px",
+              padding: "28px",
+              backdropFilter: "blur(10px)"
             }}
           >
-            <h3 style={{fontSize: '22px', fontWeight: 700, color: '#ffffff', marginBottom: '24px'}}>
-              Mi enfoque como backend
+            <h3 style={{
+              fontSize: "18px",
+              color: "#fff",
+              marginBottom: "18px",
+              fontWeight: 700
+            }}>
+              Enfoque profesional
             </h3>
-            <ul style={{listStyle: 'none', padding: 0}}>
+
+            <ul style={{ listStyle: "none", padding: 0 }}>
               {[
-                { icon: '⚡', text: 'APIs REST optimizadas (<200ms)' },
-                { icon: '🛡️', text: 'Código mantenible y escalable' },
-                { icon: '📈', text: 'Arquitectura de microservicios' },
-                { icon: '🔐', text: 'Autenticación JWT segura' },
-                { icon: '🗄️', text: 'Diseño de bases de datos' }
+                "Diseño de APIs escalables y mantenibles",
+                "Arquitectura backend moderna",
+                "Autenticación segura (JWT / bcrypt)",
+                "Optimización de bases de datos",
+                "Código limpio y estructurado"
               ].map((item) => (
-                <li key={item.text} style={{
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  gap: '12px', 
-                  marginBottom: '16px',
-                  color: '#a1a1aa',
-                  fontSize: '15px'
+                <li key={item} style={{
+                  marginBottom: "12px",
+                  color: "#a1a1aa",
+                  fontSize: "14px",
+                  position: "relative",
+                  paddingLeft: "18px"
                 }}>
-                  <span style={{color: '#22c55e', fontSize: '18px'}}>{item.icon}</span>
-                  {item.text}
+                  <span style={{
+                    position: "absolute",
+                    left: 0,
+                    color: "#22c55e"
+                  }}>•</span>
+                  {item}
                 </li>
               ))}
             </ul>
           </motion.div>
+
         </div>
       </div>
     </section>

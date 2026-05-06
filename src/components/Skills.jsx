@@ -1,125 +1,65 @@
 import { motion } from "framer-motion";
 
-const backendSkills = [
-  { name: 'Node.js', icon: '🟢' },
-  { name: 'Python', icon: '🐍' },
-  { name: 'Java', icon: '☕' },
-  { name: 'PHP', icon: '🐘' },
-  { name: 'SQL', icon: '🗄️' },
-  { name: 'NoSQL', icon: '🍃' },
-  { name: 'MongoDB', icon: '🍃' },
-  { name: 'REST APIs', icon: '🔌' },
-  { name: 'JWT Auth', icon: '🔐' },
-  { name: 'Git', icon: '🔧' }
-];
-
-const frontendSkills = [
-  { name: 'JavaScript', icon: '📜' },
-  { name: 'React', icon: '⚛️' },
-  { name: 'TypeScript', icon: '📘' },
-  { name: 'HTML5', icon: '📄' },
-  { name: 'CSS3', icon: '🎨' },
-  { name: 'Tailwind CSS', icon: '🎨' }
+const skills = [
+  "Node.js",
+  "Python",
+  "Java",
+  "PHP",
+  "SQL",
+  "NoSQL",
+  "MongoDB",
+  "REST APIs",
+  "JWT Auth",
+  "Git",
+  "HTML5",
+  "CSS3",
+  "JavaScript"
 ];
 
 export default function Skills() {
   return (
-    <section id="skills" style={{ backgroundColor: '#0f0f0f', padding: '96px 0' }}>
-      <div className="container">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <h2 className="section-title" style={{textAlign: 'center'}}>Habilidades Técnicas</h2>
-          <p className="section-subtitle" style={{textAlign: 'center', margin: '0 auto'}}>
-            Tecnologías que domino para desarrollo web completo
+    <section style={{ padding: "100px 20px", background: "#0f0f0f" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+
+        {/* Header */}
+        <div style={{ textAlign: "center", marginBottom: "60px" }}>
+          <h2 style={{ fontSize: "36px", color: "#fff", fontWeight: 800 }}>
+            Habilidades
+          </h2>
+          <p style={{ color: "#a1a1aa", marginTop: "10px" }}>
+            Tecnologías que domino y utilizo en producción
           </p>
-        </motion.div>
+        </div>
 
-        {/* Backend Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.6 }}
-          style={{ marginBottom: '48px' }}
+        {/* Grid */}
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "10px",
+            justifyContent: "center"
+          }}
         >
-          <h3 style={{
-            fontSize: '20px',
-            fontWeight: 600,
-            color: '#22c55e',
-            marginBottom: '24px',
-            textAlign: 'center'
-          }}>Backend</h3>
-          <div className="skills-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '16px'
-          }}>
-            {backendSkills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05, duration: 0.4 }}
-                className="skill-card"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  padding: '16px 20px'
-                }}
-              >
-                <span style={{ fontSize: '24px' }}>{skill.icon}</span>
-                <span className="skill-name">{skill.name}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Frontend Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-        >
-          <h3 style={{
-            fontSize: '20px',
-            fontWeight: 600,
-            color: '#3b82f6',
-            marginBottom: '24px',
-            textAlign: 'center'
-          }}>Frontend</h3>
-          <div className="skills-grid" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '16px'
-          }}>
-            {frontendSkills.map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05, duration: 0.4 }}
-                className="skill-card"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  padding: '16px 20px'
-                }}
-              >
-                <span style={{ fontSize: '24px' }}>{skill.icon}</span>
-                <span className="skill-name">{skill.name}</span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+          {skills.map((skill, index) => (
+            <motion.span
+              key={skill}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.05 }}
+              style={{
+                fontSize: "13px",
+                padding: "10px 14px",
+                borderRadius: "8px",
+                background: "rgba(34, 197, 94, 0.1)",
+                color: "#6ee7b7",
+                border: "1px solid rgba(34, 197, 94, 0.2)",
+                fontWeight: 500
+              }}
+            >
+              {skill}
+            </motion.span>
+          ))}
+        </div>
       </div>
     </section>
   );

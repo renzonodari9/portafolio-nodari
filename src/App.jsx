@@ -1,45 +1,54 @@
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-import About from "./components/About"
-import Skills from "./components/Skills"
-import Proceso from "./components/Proceso"
-import Soluciones from "./components/Soluciones"
-import Projects from "./components/Projects"
-import Experience from "./components/Experience"
-import Contact from "./components/Contact"
-import Footer from "./components/Footer"
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import Proceso from "./components/Proceso";
+import Projects from "./components/Projects";
+import Experience from "./components/Experience";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div style={{ backgroundColor: '#0f0f0f', color: '#ffffff', overflowX: 'hidden' }}>
+    <div className="app">
+
       <Navbar />
-      <div id="hero">
-        <Hero />
-      </div>
-      <div id="about">
-        <About />
-      </div>
-      <div id="skills">
-        <Skills />
-      </div>
-      <div id="proceso">
-        <Proceso />
-      </div>
-      <div id="soluciones">
-        <Soluciones />
-      </div>
-      <div id="projects">
-        <Projects />
-      </div>
-      <div id="experience">
-        <Experience />
-      </div>
-      <div id="contact">
-        <Contact />
-      </div>
+
+      <main>
+
+        <section id="hero">
+          <Hero />
+        </section>
+
+        <section id="about">
+          <About />
+        </section>
+
+        <section id="skills">
+          <Skills />
+        </section>
+
+        <section id="proceso">
+          <Proceso />
+        </section>
+
+        <section id="projects">
+          <Projects />
+        </section>
+
+        <section id="experience">
+          <Experience />
+        </section>
+
+        <section id="contact">
+          <Contact />
+        </section>
+
+      </main>
+
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
