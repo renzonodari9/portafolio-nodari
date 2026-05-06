@@ -28,25 +28,81 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section style={{ padding: "100px 20px", background: "#0f0f0f" }}>
-      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+    <section style={{
+      position: "relative",
+      backgroundColor: "#0a0a0a",
+      padding: "120px 20px",
+      color: "#fff",
+      boxSizing: "border-box",
+      overflow: "hidden"
+    }}>
+
+      {/* Background Glow */}
+      <div style={{
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "800px",
+        height: "800px",
+        background: "rgba(59, 130, 246, 0.05)",
+        filter: "blur(160px)",
+        borderRadius: "50%",
+        pointerEvents: "none"
+      }} />
+
+      {/* Grid effect */}
+      <div style={{
+        position: "absolute",
+        inset: 0,
+        opacity: 0.03,
+        backgroundImage: "linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)",
+        backgroundSize: "60px 60px",
+        pointerEvents: "none"
+      }} />
+
+      <div style={{
+        position: "relative",
+        zIndex: 10,
+        maxWidth: "1100px",
+        margin: "0 auto"
+      }}>
 
         {/* HEADER */}
-        <div style={{ textAlign: "center", marginBottom: "60px" }}>
-          <h2 style={{ fontSize: "36px", color: "#fff", fontWeight: 800 }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          style={{ textAlign: "center", marginBottom: "80px" }}
+        >
+          <h2 style={{
+            fontSize: "clamp(36px, 6vw, 48px)",
+            fontWeight: 800,
+            color: "#fff",
+            marginBottom: "16px",
+            letterSpacing: "-0.02em"
+          }}>
             Proyectos
           </h2>
-          <p style={{ color: "#a1a1aa", marginTop: "10px" }}>
+
+          <p style={{
+            color: "#6b7280",
+            maxWidth: "700px",
+            margin: "0 auto",
+            fontSize: "clamp(15px, 2.5vw, 18px)",
+            lineHeight: 1.6
+          }}>
             Soluciones reales enfocadas en backend, performance y escalabilidad
           </p>
-        </div>
+        </motion.div>
 
         {/* GRID */}
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "24px",
+            gap: "32px",
           }}
         >
           {projects.map((p, index) => (
@@ -57,45 +113,62 @@ export default function Projects() {
               transition={{ delay: index * 0.15 }}
               whileHover={{ y: -8 }}
               style={{
-                background: "linear-gradient(145deg, #151515, #1c1c1c)",
+                background: "rgba(24, 24, 27, 0.9)",
                 border: "1px solid #2a2a2a",
-                borderRadius: "18px",
+                borderRadius: "20px",
                 overflow: "hidden",
-                transition: "0.3s",
+                backdropFilter: "blur(10px)",
+                boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
+                transition: "all 0.3s ease"
               }}
             >
               {/* IMAGE */}
-              <div style={{ overflow: "hidden" }}>
+              <div style={{ overflow: "hidden", position: "relative" }}>
                 <img
                   src={p.image}
                   alt={p.title}
                   style={{
                     width: "100%",
-                    height: "190px",
+                    height: "200px",
                     objectFit: "cover",
-                    transition: "0.4s",
+                    transition: "0.4s ease",
                   }}
-                  onMouseOver={(e) =>
-                    (e.currentTarget.style.transform = "scale(1.05)")
-                  }
-                  onMouseOut={(e) =>
-                    (e.currentTarget.style.transform = "scale(1)")
-                  }
+                  onMouseOver={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                  }}
+                  onMouseOut={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                  }}
                 />
+                {/* Overlay gradient */}
+                <div style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  height: "60px",
+                  background: "linear-gradient(to top, rgba(10, 10, 10, 0.8), transparent)",
+                  pointerEvents: "none"
+                }} />
               </div>
 
               {/* CONTENT */}
-              <div style={{ padding: "22px" }}>
-                <h3 style={{ color: "#fff", fontSize: "20px" }}>
+              <div style={{ padding: "28px" }}>
+                <h3 style={{
+                  color: "#fff",
+                  fontSize: "clamp(18px, 3vw, 20px)",
+                  marginBottom: "12px",
+                  fontWeight: 700
+                }}>
                   {p.title}
                 </h3>
 
                 <p
                   style={{
-                    color: "#a1a1aa",
+                    color: "#d1d5db",
                     fontSize: "14px",
-                    marginTop: "8px",
                     lineHeight: 1.6,
+                    marginBottom: "20px"
                   }}
                 >
                   {p.description}
@@ -106,20 +179,21 @@ export default function Projects() {
                   style={{
                     display: "flex",
                     flexWrap: "wrap",
-                    gap: "6px",
-                    marginTop: "14px",
+                    gap: "8px",
+                    marginBottom: "16px",
                   }}
                 >
                   {p.tools.map((t) => (
                     <span
                       key={t}
                       style={{
-                        fontSize: "11px",
-                        padding: "4px 8px",
-                        borderRadius: "6px",
-                        background: "rgba(59,130,246,0.1)",
+                        fontSize: "12px",
+                        padding: "6px 12px",
+                        borderRadius: "8px",
+                        background: "rgba(59, 130, 246, 0.1)",
                         color: "#93c5fd",
-                        border: "1px solid rgba(59,130,246,0.2)",
+                        border: "1px solid rgba(59, 130, 246, 0.2)",
+                        fontWeight: 500
                       }}
                     >
                       {t}
@@ -132,20 +206,21 @@ export default function Projects() {
                   style={{
                     display: "flex",
                     flexWrap: "wrap",
-                    gap: "6px",
-                    marginTop: "10px",
+                    gap: "8px",
+                    marginBottom: "24px",
                   }}
                 >
                   {p.tech.map((t) => (
                     <span
                       key={t}
                       style={{
-                        fontSize: "11px",
-                        padding: "4px 8px",
-                        borderRadius: "6px",
-                        background: "rgba(34,197,94,0.1)",
+                        fontSize: "12px",
+                        padding: "6px 12px",
+                        borderRadius: "8px",
+                        background: "rgba(34, 197, 94, 0.1)",
                         color: "#6ee7b7",
-                        border: "1px solid rgba(34,197,94,0.2)",
+                        border: "1px solid rgba(34, 197, 94, 0.2)",
+                        fontWeight: 500
                       }}
                     >
                       {t}
@@ -157,8 +232,7 @@ export default function Projects() {
                 <div
                   style={{
                     display: "flex",
-                    gap: "10px",
-                    marginTop: "18px",
+                    gap: "12px",
                     flexWrap: "wrap",
                   }}
                 >
@@ -167,17 +241,35 @@ export default function Projects() {
                       key={l.label}
                       href={l.url}
                       target="_blank"
+                      rel="noopener noreferrer"
                       style={{
-                        padding: "8px 12px",
+                        padding: "10px 20px",
                         background: "#22c55e",
                         color: "#000",
-                        borderRadius: "8px",
+                        borderRadius: "12px",
                         fontSize: "13px",
                         fontWeight: 600,
                         textDecoration: "none",
+                        transition: "all 0.3s ease",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: "6px"
+                      }}
+                      onMouseOver={(e) => {
+                        e.currentTarget.style.background = "#16a34a";
+                        e.currentTarget.style.transform = "translateY(-2px)";
+                      }}
+                      onMouseOut={(e) => {
+                        e.currentTarget.style.background = "#22c55e";
+                        e.currentTarget.style.transform = "translateY(0)";
                       }}
                     >
                       {l.label}
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
                     </a>
                   ))}
                 </div>
