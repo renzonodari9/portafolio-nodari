@@ -2,20 +2,24 @@ import { motion } from "framer-motion";
 
 const backendSkills = [
   { name: 'Node.js', icon: '🟢' },
-  { name: 'Express', icon: '⚡' },
+  { name: 'Python', icon: '🐍' },
+  { name: 'Java', icon: '☕' },
+  { name: 'PHP', icon: '🐘' },
+  { name: 'SQL', icon: '🗄️' },
+  { name: 'NoSQL', icon: '🍃' },
   { name: 'MongoDB', icon: '🍃' },
-  { name: 'REST API', icon: '🔌' },
+  { name: 'REST APIs', icon: '🔌' },
   { name: 'JWT Auth', icon: '🔐' },
-  { name: 'Redis', icon: '⚡' }
+  { name: 'Git', icon: '🔧' }
 ];
 
 const frontendSkills = [
+  { name: 'JavaScript', icon: '📜' },
   { name: 'React', icon: '⚛️' },
   { name: 'TypeScript', icon: '📘' },
-  { name: 'Tailwind CSS', icon: '🎨' },
   { name: 'HTML5', icon: '📄' },
   { name: 'CSS3', icon: '🎨' },
-  { name: 'JavaScript', icon: '📜' }
+  { name: 'Tailwind CSS', icon: '🎨' }
 ];
 
 export default function Skills() {
@@ -30,7 +34,7 @@ export default function Skills() {
         >
           <h2 className="section-title" style={{textAlign: 'center'}}>Habilidades Técnicas</h2>
           <p className="section-subtitle" style={{textAlign: 'center', margin: '0 auto'}}>
-            Stack completo para desarrollo web profesional
+            Tecnologías que domino para desarrollo web completo
           </p>
         </motion.div>
 

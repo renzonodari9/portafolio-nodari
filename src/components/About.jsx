@@ -21,13 +21,15 @@ export default function About() {
               src="/mifoto.png" 
               alt="Renzo Nodari" 
               style={{
-                width: '200px',
-                height: '200px',
+                width: 'clamp(150px, 40vw, 200px)',
+                height: 'clamp(150px, 40vw, 200px)',
                 borderRadius: '50%',
                 objectFit: 'cover',
                 border: '3px solid rgba(34, 197, 94, 0.5)',
                 boxShadow: '0 0 30px rgba(34, 197, 94, 0.3)',
-                marginBottom: '20px'
+                marginBottom: '20px',
+                display: 'block',
+                margin: '0 auto 20px'
               }}
             />
             Sobre mí
