@@ -233,33 +233,7 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        {/* Stats Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8 }}
-          style={{
-            position: "absolute",
-            bottom: "-20px",
-            right: "-20px",
-            background: "rgba(24, 24, 27, 0.8)",
-            border: "1px solid #2a2a2a",
-            borderRadius: "16px",
-            padding: "20px 24px",
-            backdropFilter: "blur(10px)",
-            display: "flex",
-            gap: "24px"
-          }}
-        >
-          <div>
-            <div style={{ color: "#22c55e", fontSize: "24px", fontWeight: 700 }}>4+</div>
-            <div style={{ color: "#71717a", fontSize: "12px" }}>Proyectos</div>
-          </div>
-          <div>
-            <div style={{ color: "#22c55e", fontSize: "24px", fontWeight: 700 }}>100%</div>
-            <div style={{ color: "#71717a", fontSize: "12px" }}>Compromiso</div>
-          </div>
-        </motion.div>
+
 
         {/* Scroll Indicator */}
         <motion.div
