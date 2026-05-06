@@ -103,7 +103,7 @@ export default function Hero() {
             marginBottom: "16px"
           }}
         >
-          Desarrollador Full Stack
+          Desarrollador Backend
         </motion.p>
 
         {/* Description */}
@@ -120,8 +120,9 @@ export default function Hero() {
             marginBottom: "40px"
           }}
         >
-          Desarrollo APIs modernas, seguras y optimizadas para aplicaciones reales,
-          creando experiencias rápidas, limpias y escalables con tecnologías modernas.
+          Especializado en arquitectura de servidores, bases de datos y APIs REST.
+          Diseño sistemas escalables, seguros y optimizados que manejan la lógica de negocio
+          y datos de aplicaciones modernas usando Node.js, MongoDB y tecnologías backend.
         </motion.p>
 
         {/* Stack */}
