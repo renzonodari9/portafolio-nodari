@@ -56,10 +56,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          style={{
-            textAlign: "center",
-            marginBottom: "80px"
-          }}
+          style={{ textAlign: "center", marginBottom: "80px" }}
         >
           {/* FOTO */}
           <motion.div
@@ -67,13 +64,10 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            style={{
-              display: "inline-block",
-              marginBottom: "28px"
-            }}
+            style={{ display: "inline-block", marginBottom: "28px" }}
           >
             <img
-              src="/mifoto.png"
+              src="/foto.png"
               alt="Renzo Nodari"
               style={{
                 width: "clamp(150px, 40vw, 200px)",
