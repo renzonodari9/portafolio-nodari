@@ -5,7 +5,7 @@ const projects = [
     title: "E-commerce Platform",
     description:
       "Plataforma escalable de comercio electrónico con panel admin, gestión de productos y sistema de pagos integrado.",
-    image: "/img-app.png",
+    image: "/ecom.png",
     tech: ["React", "Node.js", "MongoDB", "Express"],
     links: [
       { label: "Tienda", url: "https://ecommerce-store-v8hq.onrender.com" },
