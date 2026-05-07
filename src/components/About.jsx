@@ -67,7 +67,7 @@ export default function About() {
             style={{ display: "inline-block", marginBottom: "28px" }}
           >
             <img
-              src="/foto.png"
+              src="/mifoto.png"
               alt="Renzo Nodari"
               style={{
                 width: "clamp(150px, 40vw, 200px)",
