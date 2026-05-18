@@ -112,8 +112,8 @@ export default function Projects() {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-            gap: "32px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gap: "24px",
           }}
         >
           {projects.map((p, index) => (
@@ -140,7 +140,7 @@ export default function Projects() {
                   alt={p.title}
                   style={{
                     width: "100%",
-                    height: "200px",
+                    height: "150px",
                     objectFit: "cover",
                     transition: "0.4s ease",
                   }}
@@ -157,18 +157,18 @@ export default function Projects() {
                   bottom: 0,
                   left: 0,
                   right: 0,
-                  height: "60px",
+                  height: "40px",
                   background: "linear-gradient(to top, rgba(10, 10, 10, 0.8), transparent)",
                   pointerEvents: "none"
                 }} />
               </div>
 
               {/* CONTENT */}
-              <div style={{ padding: "28px" }}>
+              <div style={{ padding: "20px" }}>
                 <h3 style={{
                   color: "#fff",
-                  fontSize: "clamp(18px, 3vw, 20px)",
-                  marginBottom: "12px",
+                  fontSize: "clamp(16px, 2.5vw, 18px)",
+                  marginBottom: "8px",
                   fontWeight: 700
                 }}>
                   {p.title}
@@ -177,9 +177,9 @@ export default function Projects() {
                 <p
                   style={{
                     color: "#d1d5db",
-                    fontSize: "14px",
-                    lineHeight: 1.6,
-                    marginBottom: "20px"
+                    fontSize: "13px",
+                    lineHeight: 1.5,
+                    marginBottom: "12px"
                   }}
                 >
                   {p.description}
@@ -190,17 +190,17 @@ export default function Projects() {
                   style={{
                     display: "flex",
                     flexWrap: "wrap",
-                    gap: "8px",
-                    marginBottom: "16px",
+                    gap: "6px",
+                    marginBottom: "10px",
                   }}
                 >
                   {p.tools.map((t) => (
                     <span
                       key={t}
                       style={{
-                        fontSize: "12px",
-                        padding: "6px 12px",
-                        borderRadius: "8px",
+                        fontSize: "11px",
+                        padding: "4px 10px",
+                        borderRadius: "6px",
                         background: "rgba(59, 130, 246, 0.1)",
                         color: "#93c5fd",
                         border: "1px solid rgba(59, 130, 246, 0.2)",
@@ -217,17 +217,17 @@ export default function Projects() {
                   style={{
                     display: "flex",
                     flexWrap: "wrap",
-                    gap: "8px",
-                    marginBottom: "24px",
+                    gap: "6px",
+                    marginBottom: "16px",
                   }}
                 >
                   {p.tech.map((t) => (
                     <span
                       key={t}
                       style={{
-                        fontSize: "12px",
-                        padding: "6px 12px",
-                        borderRadius: "8px",
+                        fontSize: "11px",
+                        padding: "4px 10px",
+                        borderRadius: "6px",
                         background: "rgba(34, 197, 94, 0.1)",
                         color: "#6ee7b7",
                         border: "1px solid rgba(34, 197, 94, 0.2)",
@@ -243,7 +243,7 @@ export default function Projects() {
                 <div
                   style={{
                     display: "flex",
-                    gap: "12px",
+                    gap: "8px",
                     flexWrap: "wrap",
                   }}
                 >
@@ -254,11 +254,11 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       style={{
-                        padding: "10px 20px",
+                        padding: "8px 14px",
                         background: "#22c55e",
                         color: "#000",
-                        borderRadius: "12px",
-                        fontSize: "13px",
+                        borderRadius: "10px",
+                        fontSize: "12px",
                         fontWeight: 600,
                         textDecoration: "none",
                         transition: "all 0.3s ease",
@@ -276,7 +276,7 @@ export default function Projects() {
                       }}
                     >
                       {l.label}
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                         <polyline points="15 3 21 3 21 9" />
                         <line x1="10" y1="14" x2="21" y2="3" />
