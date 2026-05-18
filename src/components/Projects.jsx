@@ -24,6 +24,17 @@ const projects = [
     ],
     tools: ["Fetch API", "LocalStorage", "Geolocation", "Chart.js"],
   },
+  {
+    title: "DevBoard",
+    description:
+      "Gestor inteligente de proyectos y tareas con sistema de recordatorios, autenticación segura y panel de control personalizado para organizar tu flujo de trabajo.",
+    image: "/img-app.png",
+    tech: ["React", "Node.js", "MongoDB", "Express", "JWT", "Git"],
+    links: [
+      { label: "Demo", url: "https://devboard-08cp.onrender.com" },
+    ],
+    tools: ["JWT Auth", "REST APIs", "CRUD", "Auth Middleware"],
+  },
 ];
 
 export default function Projects() {
